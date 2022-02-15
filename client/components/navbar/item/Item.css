@@ -1,0 +1,17 @@
+.container {
+  font-size: 15px;
+  padding: 0px 10px;
+}
+
+.container:hover{
+  animation-name: underline;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes underline {
+  100% {
+    background-color: black;
+    color: white
+  }
+}

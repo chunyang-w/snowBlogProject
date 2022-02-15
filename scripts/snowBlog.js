@@ -1,0 +1,2 @@
+require('./launchStaticServer')
+require('./launchApiServer')

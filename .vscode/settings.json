@@ -1,0 +1,17 @@
+{
+  "cSpell.words": [
+    "antd",
+    "cfonts",
+    "CLASSPATH",
+    "dbpath",
+    "fullpage",
+    "keyframes",
+    "logpath",
+    "reduxjs",
+    "Sider",
+    "webpackbar"
+  ],
+  "path-intellisense.mappings": {
+    "@client": "${workspaceRoot}/client"
+  }
+}

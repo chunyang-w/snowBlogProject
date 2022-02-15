@@ -1,0 +1,4 @@
+require('./scripts/launchStaticServer')
+
+
+

@@ -1,0 +1,61 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "a flexible blog frame work",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon --config ./nodemon.json  ./scripts/launchApiServer.js",
+    "client-dev": "cross-env NODE_ENV=dev node ./scripts/launchStaticServer.js",
+    "client-test": "cross-env NODE_ENV=test node ./scripts/launchStaticServer.js",
+    "client-prod": "cross-env NODE_ENV=prod node ./scripts/launchStaticServer.js",
+    "dev": "npm run client-dev & npm run server",
+    "test": "npm run client-test & npm run server",
+    "prod": "cross-env NODE_ENV=prod pm2 start ./scripts/snowBlog.js"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "snow2512",
+  "license": "ISC",
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@fullpage/react-fullpage": "^0.1.19",
+    "@reduxjs/toolkit": "^1.7.2",
+    "antd": "^4.18.5",
+    "axios": "^0.25.0",
+    "connect-history-api-fallback": "^1.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "pm2": "^5.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.1",
+    "webpackbar": "^5.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-import": "^1.13.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "chalk": "^5.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.5.1",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "nodemon": "^2.0.15",
+    "react-hot-loader": "^4.13.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-middleware": "^5.3.0",
+    "webpack-dev-server": "^4.7.3",
+    "webpack-hot-middleware": "^2.25.1",
+    "webpack-merge": "^5.8.0"
+  }
+}

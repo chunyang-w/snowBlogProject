@@ -1,0 +1,9 @@
+.navBar {
+  position: absolute;
+  z-index: 9;
+}
+
+.spacer {
+  height: 50px;
+  width: 100%;
+}
