@@ -1,14 +1,18 @@
 {
   "cSpell.words": [
     "antd",
+    "authtoken",
     "cfonts",
     "CLASSPATH",
     "dbpath",
     "fullpage",
     "keyframes",
     "logpath",
+    "persistor",
+    "presistor",
     "reduxjs",
     "Sider",
+    "uuidv",
     "webpackbar"
   ],
   "path-intellisense.mappings": {

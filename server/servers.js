@@ -11,7 +11,10 @@ staticServer.use('/', connectHistoryApiFallback())
 
 // API Server
 const apiServer = express()
+const interceptor = require('./utils/interceptor')
+apiServer.use(express.json())
 apiServer.use(cors())
+apiServer.use(interceptor)
 apiServer.use('/login', require('./api/Login'))
 
 // Mongod Server

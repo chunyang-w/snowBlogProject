@@ -1,9 +1,35 @@
+.header {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoutButton {
+  margin-right: 10px
+}
+
 .logo {
   height: 32px;
   margin: 16px;
   background: rgba(255, 255, 255, 0.3);
 }
 
-.site-layout .site-layout-background {
+.site-layout {
+  background: rgba(228, 228, 228, 0.747);
+}
+
+.site-layout-background {
   background: #fff;
+}
+
+.trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: #1890ff;
 }

@@ -1,5 +1,8 @@
 import axios from 'axios'
 import config from '../../config/config'
+import { message } from 'antd'
+import store from '@client/store/index'
+import { setLoginState } from '@client/store/adminLogin/adminLogin'
 
 const API = {
   baseURL: (
@@ -18,6 +21,8 @@ const herald = axios.create({
 
 herald.interceptors.request.use(
   config => {
+    config.headers.authToken = store.getState().adminLogin.token
+    config.headers.username= store.getState().adminLogin.username
     return config
   },
   err => {
@@ -27,7 +32,19 @@ herald.interceptors.request.use(
 
 herald.interceptors.response.use(
   res => {
-    return res
+    if (res.data.code === 1) {
+      message.error(res.data.message)
+    } else if (res.data.code === 2 | res.data.code === 3) {
+      store.dispatch(setLoginState({
+        username: '',
+        needLogin: true,
+        token: ''
+      }))
+      message.warning(res.data.message)
+    } else if (res.data.code !== 0) {
+      message.warning(res.data.message)
+    }
+    return res.data
   },
   err => {
     console.log('[herald] response failed:', err)

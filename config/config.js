@@ -19,7 +19,8 @@ const config = {
     mongoPort: 3320,
     devURL: 'http://localhost',
     testURL: 'http://localhost',
-    prodURL: 'http://localhost'
+    prodURL: 'http://localhost',
+    tokenExpireTime: 100000,
   }
 }
 

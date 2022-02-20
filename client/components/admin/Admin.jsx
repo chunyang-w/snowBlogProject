@@ -1,67 +1,76 @@
 import React from 'react'
-import 'antd/dist/antd.css'
+
 import style from './Admin.css'
-import { Layout, Menu, Breadcrumb } from 'antd'
+import { Layout, Button, message } from 'antd'
+import SideBar from './sideBar/SideBar.jsx'
 import {
-  DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
+  MenuUnfoldOutlined,
+  MenuFoldOutlined
 } from '@ant-design/icons'
 
-const { Header, Content, Footer, Sider } = Layout
-const { SubMenu } = Menu
+const { Header, Content, Sider } = Layout
 
+import herald from '@client/herald/herald.js'
+import store from '@client/store/index'
+import { setLoginState } from '@client/store/adminLogin/adminLogin'
+ 
 export default class SiderDemo extends React.Component {
   state = {
     collapsed: false,
   }
 
-  onCollapse = collapsed => {
-    console.log(collapsed);
-    this.setState({ collapsed });
+  toggle = () => {
+    setState({
+      collapsed: !this.state.collapsed,
+    });
+  }
+
+  logout = () => {
+    store.dispatch(setLoginState({
+      username: '',
+      needLogin: true,
+      token: ''
+    }))
+    message.success('Logout Success')
   }
 
   render() {
-    const { collapsed } = this.state;
     return (
       <Layout style={{ minHeight: '100vh' }}>
-        <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
-          <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item key="1" icon={<PieChartOutlined />}>
-              Option 1
-            </Menu.Item>
-            <Menu.Item key="2" icon={<DesktopOutlined />}>
-              Option 2
-            </Menu.Item>
-            <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-              <Menu.Item key="3">Tom</Menu.Item>
-              <Menu.Item key="4">Bill</Menu.Item>
-              <Menu.Item key="5">Alex</Menu.Item>
-            </SubMenu>
-            <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-              <Menu.Item key="6">Team 1</Menu.Item>
-              <Menu.Item key="8">Team 2</Menu.Item>
-            </SubMenu>
-            <Menu.Item key="9" icon={<FileOutlined />}>
-              Files
-            </Menu.Item>
-          </Menu>
+
+        <Sider collapsible collapsed={this.state.collapsed} trigger = { null }>
+          <SideBar></SideBar>
         </Sider>
-        <Layout className="site-layout">
-          <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb>
-            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              Bill is a cat.
+  
+        <Layout className= { style["site-layout"] }>
+          <Header className= { style["header"] } style={{ padding: 0 }}>
+            <div>
+              {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+                className: style['trigger'],
+                onClick: this.toggle,
+              })}
             </div>
+            <div>
+              <Button
+                className = {style.logoutButton}
+                size = 'small'
+                onClick = { () => {this.logout()} }
+                > Logout
+              </Button>
+            </div>
+          </Header>
+          <Content
+            className= { style["site-layout-background"] }
+            style={{
+              margin: '10px 10px',
+              padding: 24,
+              minHeight: 280,
+            }}
+          >
+            Content
           </Content>
-          <Footer style={{ textAlign: 'center' }}>snowBlog © Created by snow2512</Footer>
         </Layout>
+
       </Layout>
     );
   }
