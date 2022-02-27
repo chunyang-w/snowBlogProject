@@ -6,7 +6,8 @@ import {
   Space,
   Table,
   Modal,
-  Input
+  Input,
+  message,
 } from 'antd'
 const { Column, ColumnGroup } = Table
 
@@ -33,7 +34,7 @@ export default class Article extends React.Component {
 
   getArticles() {
     console.log('get Articles')
-    herald.get('/article')
+    herald.get('/admin/article')
       .then((res) => {
         console.log(res)
         this.setState({
@@ -72,7 +73,7 @@ export default class Article extends React.Component {
     })
     console.log(this.state.method)
     herald({
-      url: '/article',
+      url: 'admin/article',
       method: this.state.method,
       params: {
         articleTitle: this.state.articleTitle,
@@ -86,8 +87,8 @@ export default class Article extends React.Component {
       .then((res) => {
         console.log(res)
         this.getArticles()
+        message.success('新建文章成功')
       })
-    this.getArticles()
   }
   componentDidMount() {
     this.getArticles()
@@ -124,8 +125,13 @@ export default class Article extends React.Component {
             ></Column>
             <Column
               title = '上线状态'
-              dataIndex = 'online'
               key = 'online'
+              render = {(_, record) => (
+                record.online ?
+                  <p>已上线</p>
+                  :
+                  <p>未上线</p>
+              )}
             ></Column>
             <Column
               title = '操作'
