@@ -16,7 +16,7 @@ apiServer.use(express.json())
 apiServer.use(cors())
 apiServer.use(interceptor)
 apiServer.use('/login', require('./api/Login'))
-apiServer.use('/article', require('./api/Article'))
+apiServer.use('/admin', require('./api/admin/Admin'))
 
 // Mongod Server
 const dbPath = path.resolve(__dirname, '../database/data')
