@@ -32,17 +32,19 @@ herald.interceptors.request.use(
 
 herald.interceptors.response.use(
   res => {
-    if (res.data.code === 1) {
-      message.error(res.data.message)
-    } else if (res.data.code === 2 | res.data.code === 3) {
-      store.dispatch(setLoginState({
-        username: '',
-        needLogin: true,
-        token: ''
-      }))
+    if (res.data.code !== 0) {
       message.warning(res.data.message)
-    } else if (res.data.code !== 0) {
-      message.warning(res.data.message)
+      if (res.data.code === 1) {
+        message.error(res.data.message)
+      } else if (res.data.code === 2 | res.data.code === 3) {
+        store.dispatch(setLoginState({
+          username: '',
+          needLogin: true,
+          token: ''
+        }))
+        message.warning(res.data.message)
+      }
+      return Promise.reject(res.data.message)
     }
     return res.data
   },

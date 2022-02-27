@@ -6,7 +6,7 @@ const router = express.Router()
 const config = require('../../../config/config')
 
 router.post('/', async (req, res) => {
-  console.log(req.body)
+  console.log('in article.post :', req.body)
   const newArticle = new ArticleModel({
     articleTitle: req.body.articleTitle,
     created: new Date().getTime(),
@@ -34,11 +34,30 @@ router.get('/', async (req, res) => {
 })
 
 router.delete('/', async (req, res) => {
-
+  console.log('in article.delete', req.body)
+  const articleId = req.body.articleId
+  await ArticleModel.deleteOne({ _id: articleId })
+  res.send(new Response({
+    code: 0,
+    data: null,
+    message: 'delete success'
+  }))
 })
 
 router.put('/', async (req,res) => {
-  console.log(req.params)
+  console.log('in article.put:', req.body)
+  const [articleTitle, articleId] = [req.body.articleTitle, req.body.articleId]
+  console.log('article.put, articleTitle:', articleTitle)
+  ArticleModel.findByIdAndUpdate(
+    articleId, { articleTitle: articleTitle }
+  )
+  .then( ret => {
+    res.send(new Response({
+      code: 0,
+      data: null,
+      message: 'update success'
+    }))
+  })
 })
 
 module.exports = router

@@ -23,6 +23,7 @@ export default class Article extends React.Component {
     this.getArticles = this.getArticles.bind(this)
     this.setForm = this.setForm.bind(this)
     this.updateArticle = this.updateArticle.bind(this)
+    this.deleteArticle = this.deleteArticle.bind(this)
     this.state = {
       articleData: [],
       formVisible: false,
@@ -30,6 +31,19 @@ export default class Article extends React.Component {
       articleId: '',
       method: 'no method'
     }
+  }
+
+  deleteArticle(articleId) {
+    console.log('deleteArticle toggled', articleId)
+    herald.delete('admin/article', {
+      data: {
+        articleId
+      }
+    })
+      .then(res => {
+        this.getArticles()
+        message.success('文章删除成功')
+      })
   }
 
   getArticles() {
@@ -87,7 +101,7 @@ export default class Article extends React.Component {
       .then((res) => {
         console.log(res)
         this.getArticles()
-        message.success('新建文章成功')
+        message.success('文章操作成功')
       })
   }
   componentDidMount() {
@@ -138,14 +152,19 @@ export default class Article extends React.Component {
               key = 'action'
               render = {(_, record) => (
                 <Space size = 'middle'>
-                  <a>modify</a>
+                  <a>编辑文章</a>
                   <a onClick = { () => {
                     console.log(record)
                     this.setForm({
-                    articleTitle: record.articleTitle,
-                    articleId: record._id
-                  })} }>edit</a>
-                  <a>delete</a>
+                      articleTitle: record.articleTitle,
+                      articleId: record._id
+                  })} }>修改</a>
+                  <a
+                    onClick = { () => this.deleteArticle(
+                      record._id
+                    ) }
+                    >删除
+                  </a>
                 </Space>
               )}
             ></Column>

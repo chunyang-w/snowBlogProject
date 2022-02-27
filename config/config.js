@@ -20,7 +20,7 @@ const config = {
     devURL: 'http://localhost',
     testURL: 'http://localhost',
     prodURL: 'http://localhost',
-    tokenExpireTime: 500000,
+    tokenExpireTime: 5000000,
   }
 }
 
