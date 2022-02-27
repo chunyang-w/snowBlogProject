@@ -20,6 +20,5 @@ module.exports = merge(common, {
   ],
   stats: 'errors-only',
   devServer: {
-    quiet: true
   }
 })

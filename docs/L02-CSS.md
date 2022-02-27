@@ -8,7 +8,7 @@
 
 ## 通过 webpack 加载 css
 
-### 踩坑记录：如何加载 antd
+## 踩坑记录：如何加载 antd
 
 今天在引入 antd 样式的时候发生了一些问题：样式已经引入了，但是却无法正确显示，这是为什么呢？
 
@@ -141,7 +141,6 @@ div {
 }
 ```
 
-## CSS 定位
 
 ## CSS 伪元素和伪类
 
@@ -206,5 +205,33 @@ z-index 如果为一个整数，则产生一个全新的堆叠上下文，其子
 
 使用 clip-path 来裁剪图形。可以是圆形、多边形、椭圆等多种形状
 
+## CSS 盒子模型
+
+### 盒模型的分类
+
+盒模型分为两种：
+
++ IE 盒模型： IE 浏览器中的盒模型标准
+  1. width 和 height 包含 border 和 padding
+  2. width 和 height = content + padding + border
+  3. 也叫怪异盒模型
++ 标准盒模型
+  1. width 和 height 只包括自己的 content，不包含 border 和 padding
+  2. 也叫 W3C 盒模型
+
+**注意：两种盒模型均不包含 margin。元素的包裹顺序（从外到内）为： margin, border, padding, content**
+
+### 盒模型的控制
+
+盒模型的种类在除了 IE 之外的浏览器中均默认为标准和模型。
+
+同时，我们可以使用 `box-sizing` 属性来控制模型的种类
+
++ content-box: 标准盒模型
++ border-box: IE 盒模型
+
+###
+
+##
 
 

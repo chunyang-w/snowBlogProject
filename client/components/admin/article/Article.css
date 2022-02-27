@@ -1,0 +1,24 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 50px;
+  flex-grow: 0;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+}
+
+.newArticle {
+  margin-right: 30px;
+}
+
+.main {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+}

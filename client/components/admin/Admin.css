@@ -1,7 +1,13 @@
+.container {
+  height: 100vh;
+  min-height: 100vh;
+}
+
 .header {
   background: #fff;
   display: flex;
   justify-content: space-between;
+  padding: 0px;
 }
 
 .logoutButton {
@@ -14,12 +20,16 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
-.site-layout {
+.mainLayout {
   background: rgba(228, 228, 228, 0.747);
+  height: 100%;
 }
 
-.site-layout-background {
+.content {
   background: #fff;
+  margin: 10px 10px;
+  padding: 24;
+  height: 100%;
 }
 
 .trigger {

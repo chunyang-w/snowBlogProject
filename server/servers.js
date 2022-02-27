@@ -7,7 +7,7 @@ const cors = require('cors')
 // Static Server
 const staticServer = express()
 const connectHistoryApiFallback = require('connect-history-api-fallback')
-staticServer.use('/', connectHistoryApiFallback())
+staticServer.use(connectHistoryApiFallback())
 
 // API Server
 const apiServer = express()
@@ -16,6 +16,7 @@ apiServer.use(express.json())
 apiServer.use(cors())
 apiServer.use(interceptor)
 apiServer.use('/login', require('./api/Login'))
+apiServer.use('/article', require('./api/Article'))
 
 // Mongod Server
 const dbPath = path.resolve(__dirname, '../database/data')

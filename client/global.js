@@ -1,6 +1,7 @@
 import store from './store/index'
 import { setDeviceType } from './store/window/windowReducer'
 import { browserWindow } from '../config/config'
+import '../node_modules/quill/dist/quill.snow.css'
 
 //============================================================
 console.log('global.js loaded')

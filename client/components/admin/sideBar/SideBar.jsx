@@ -1,53 +1,69 @@
 import React from 'react'
-import { Menu } from 'antd'
-import {
-  DesktopOutlined,
-  PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from '@ant-design/icons'
+import { useNavigate } from 'react-router-dom'
 
+import { Menu } from 'antd'
 import routes from '@client/router/routes'
 
 const { SubMenu } = Menu
+const ADMIN_ROUTE = '/admin'
 
-export default class SideBar extends React.Component {
-  constructor(props) {
-    super(props)
+export default function SideBar() {
+
+  const navigate = useNavigate()
+
+  const adminRoutes = routes.find((route) => {
+    return route.path === ADMIN_ROUTE
+  })
+
+  function jumpToLink(routeArr) {
+    const linkToJump = [ADMIN_ROUTE, ...routeArr].join('/')
+    navigate(linkToJump)
   }
-  componentDidMount() {
-    // console.log(routes)
-  }
-  render() {
-    const adminRoutes = routes.find((route) => {
-      return route.path === '/admin'
-    })
-    console.log(adminRoutes)
-    const MenuElem = (
-      adminRoutes.children
-    )
-    return (
-      <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-        <Menu.Item key="1" icon={<PieChartOutlined />}>
-          Option 1
+
+  const routesElem = adminRoutes.children.map((route, idx) => {
+    if (route.children === undefined) {
+      console.log(route)
+      return (
+        <Menu.Item
+          key = { String(idx) }
+          icon = { route.icon }
+          onClick = { () => jumpToLink([route.path]) }
+        >
+          { route.title }
         </Menu.Item>
-        <Menu.Item key="2" icon={<DesktopOutlined />}>
-          Option 2
-        </Menu.Item>
-        <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-          <Menu.Item key="3">Tom</Menu.Item>
-          <Menu.Item key="4">Bill</Menu.Item>
-          <Menu.Item key="5">Alex</Menu.Item>
+      )
+    } else {
+      return (
+        <SubMenu
+          key = { String(idx) }
+          icon = { route.icon }
+          title = { route.title }
+        >
+          {
+            route.children.map((subRoute, idx) => {
+              return (
+                <Menu.Item
+                  key = { String(idx) }
+                  icon = { subRoute.icon }
+                  onClick = { () => jumpToLink([route.path, subRoute.path]) }
+                >
+                  { subRoute.title }
+                </Menu.Item>
+              )
+            })
+          }
         </SubMenu>
-        <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-          <Menu.Item key="6">Team 1</Menu.Item>
-          <Menu.Item key="8">Team 2</Menu.Item>
-        </SubMenu>
-        <Menu.Item key="9" icon={<FileOutlined />}>
-          Files
-        </Menu.Item>
-      </Menu>
-    )
-  }
+      )
+    }
+  })
+
+  return (
+    <Menu
+      theme="dark"
+      defaultSelectedKeys={['1']}
+      mode="inline"
+    >
+      { routesElem }
+    </Menu>
+  )
 }

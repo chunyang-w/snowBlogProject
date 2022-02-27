@@ -8,8 +8,16 @@ import { setRouteInterceptor } from './interceptor'
 
 // Static Components imports:
 import App from '../components/app/App.jsx'
+import Article from '@client/components/admin/article/Article.jsx'
 import store from '@client/store'
 import { setNeedLogin } from '@client/store/adminLogin/adminLogin'
+
+// router icon:
+import {
+  FormOutlined,
+  MessageOutlined
+} from '@ant-design/icons'
+
 
 // route object:
 const routes = [
@@ -44,14 +52,19 @@ const routes = [
     }),
     children: [
       {
-        path: '/article',
-        element: load(() => import( /* webpackChunkName: "admin/article" */ '../components/admin/Admin.jsx' ), {
+        path: 'article',
+        title: '文章管理',
+        icon: <FormOutlined />,
+        // element: <Article/>
+        element: loadAsync(() => import( /* webpackChunkName: "adminArticle" */ '../components/admin/article/Article.jsx' ), {
           title: '文章管理'
         })
       },
       {
-        path: '/message',
-        element: load(() => import( /* webpackChunkName: "admin/message" */ '../components/admin/Admin.jsx' ), {
+        path: 'message',
+        title: '留言管理',
+        icon: <MessageOutlined />,
+        element: loadAsync(() => import( /* webpackChunkName: "adminMessage" */ '../components/admin/message/Message.jsx' ), {
           title: '留言管理'
         })
       }
