@@ -3,7 +3,7 @@ const express = require('express')
 const ArticleModel = require('../../mongo/model/ArticleModel')
 const Response = require('../../response/response')
 const router = express.Router()
-const config = require('../../../config/config')
+
 
 router.post('/', async (req, res) => {
   console.log('in article.post :', req.body)
@@ -13,7 +13,8 @@ router.post('/', async (req, res) => {
     online: false,
     lastModified: new Date().getTime(),
     hits: 0,
-    content: ''
+    content: '',
+    tag: req.body.tag
   })
   await newArticle.save()
   res.send(new Response({
@@ -46,12 +47,11 @@ router.delete('/', async (req, res) => {
 
 router.put('/', async (req,res) => {
   console.log('in article.put:', req.body)
-  const [articleTitle, articleId] = [req.body.articleTitle, req.body.articleId]
-  console.log('article.put, articleTitle:', articleTitle)
+  // console.log('article.put, articleTitle:', articleTitle)
   ArticleModel.findByIdAndUpdate(
-    articleId, { articleTitle: articleTitle }
+    req.body.articleId, req.body
   )
-  .then( ret => {
+  .then(() => {
     res.send(new Response({
       code: 0,
       data: null,

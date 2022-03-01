@@ -55,10 +55,25 @@ const routes = [
         path: 'article',
         title: '文章管理',
         icon: <FormOutlined />,
-        // element: <Article/>
-        element: loadAsync(() => import( /* webpackChunkName: "adminArticle" */ '../components/admin/article/Article.jsx' ), {
-          title: '文章管理'
-        })
+        children: [
+          {
+            path: 'index',
+            title: '文章管理',
+            index: true,
+            showInMenu: true,
+            element: loadAsync(() => import( /* webpackChunkName: "adminArticle" */ '../components/admin/article/Article.jsx' ), {
+              title: '文章管理'
+            }),
+          },
+          {
+            path: 'edit/:articleId',
+            title: '文章管理',
+            showInMenu: false,
+            element: loadAsync(() => import( /* webpackChunkName: "adminArticle" */ '../components/admin/article/articleEditor/ArticleEditor.jsx' ), {
+              title: '文章管理'
+            })
+          }
+        ]
       },
       {
         path: 'message',

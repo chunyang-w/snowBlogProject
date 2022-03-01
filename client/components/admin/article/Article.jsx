@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import style from './Article.css'
 
 import {
@@ -8,8 +9,9 @@ import {
   Modal,
   Input,
   message,
+  Tag
 } from 'antd'
-const { Column, ColumnGroup } = Table
+const { Column } = Table
 
 import {
   PlusOutlined
@@ -24,13 +26,26 @@ export default class Article extends React.Component {
     this.setForm = this.setForm.bind(this)
     this.updateArticle = this.updateArticle.bind(this)
     this.deleteArticle = this.deleteArticle.bind(this)
+    this.changeOnlineStatus = this.changeOnlineStatus.bind(this)
     this.state = {
       articleData: [],
       formVisible: false,
       articleTitle: '',
       articleId: '',
+      articleTag: '',
       method: 'no method'
     }
+  }
+
+  changeOnlineStatus(id, onlineStatus) {
+    herald.put('/admin/article', {
+      articleId: id,
+      online: !onlineStatus
+    })
+    .then(res => {
+      message.success('更新状态成功')
+      this.getArticles()
+    })
   }
 
   deleteArticle(articleId) {
@@ -50,7 +65,11 @@ export default class Article extends React.Component {
     console.log('get Articles')
     herald.get('/admin/article')
       .then((res) => {
-        console.log(res)
+        for (let i = 0; i < res.data.length; i++) {
+          res.data[i].key = res.data[i]._id
+        }
+        console.log(res.data)
+        res.data.sort((elem1, elem2) => elem2.created - elem1.created)
         this.setState({
           articleData: res.data
         })
@@ -69,11 +88,13 @@ export default class Article extends React.Component {
     console.log(method)
     if (method === 'POST') {
       this.setState({
-        articleTitle: ''
+        articleTitle: '',
+        articleTag: ''
       })
     } else if (method === 'PUT') {
       this.setState({
         articleTitle: data.articleTitle,
+        articleTag: data.articleTag,
         articleId: data.articleId
       })
     }
@@ -89,13 +110,10 @@ export default class Article extends React.Component {
     herald({
       url: 'admin/article',
       method: this.state.method,
-      params: {
-        articleTitle: this.state.articleTitle,
-        articleId: this.state.articleId
-      },
       data: {
         articleTitle: this.state.articleTitle,
-        articleId: this.state.articleId
+        articleId: this.state.articleId,
+        tag: this.state.articleTag
       }
     })
       .then((res) => {
@@ -104,6 +122,7 @@ export default class Article extends React.Component {
         message.success('文章操作成功')
       })
   }
+
   componentDidMount() {
     this.getArticles()
   }
@@ -121,7 +140,9 @@ export default class Article extends React.Component {
           ></Button>
         </div>
         <div className = { style.main }>
-          <Table dataSource = { this.state.articleData }>
+          <Table
+            dataSource = { this.state.articleData }
+            >
             <Column
               title = '文章名称'
               dataIndex = 'articleTitle'
@@ -138,13 +159,45 @@ export default class Article extends React.Component {
               key = 'comments'
             ></Column>
             <Column
+              title = '创建时间'
+              dataIndex = 'created'
+              key = 'created'
+              render = {(_, record) => (
+                <p> { (new Date(record.created)).toLocaleDateString() } </p>
+              )}
+            ></Column>
+            <Column
+              title = '最后修改时间'
+              dataIndex = 'lastModified'
+              key = 'lastModified'
+              render = {(_, record) => (
+                <p> { (new Date(record.lastModified)).toLocaleDateString() } </p>
+              )}
+            ></Column>
+            <Column
               title = '上线状态'
               key = 'online'
               render = {(_, record) => (
-                record.online ?
-                  <p>已上线</p>
-                  :
-                  <p>未上线</p>
+                <span onClick = { () => { this.changeOnlineStatus(record._id, record.online) } }>
+                {
+                    record.online ?
+                    <a>已上线</a>
+                    :
+                    <a>未上线</a>
+                }
+                </span>
+              )}
+            ></Column>
+            <Column
+              title = '标签'
+              key = 'tag'
+              render = {(_, record) => (
+                <Tag
+                  color = 'blue'
+                  key={ record.tag }
+                  >
+                  { record.tag }
+                </Tag>
               )}
             ></Column>
             <Column
@@ -152,11 +205,15 @@ export default class Article extends React.Component {
               key = 'action'
               render = {(_, record) => (
                 <Space size = 'middle'>
-                  <a>编辑文章</a>
+                  <Link
+                    to = { `/admin/article/edit/${record._id}` }
+                    >编辑文章
+                  </Link>
                   <a onClick = { () => {
                     console.log(record)
                     this.setForm({
                       articleTitle: record.articleTitle,
+                      articleTag: record.tag,
                       articleId: record._id
                   })} }>修改</a>
                   <a
@@ -177,11 +234,22 @@ export default class Article extends React.Component {
             onCancel = { () => this.setState({ formVisible: false }) }
           >
             <Input
+              className = { style.modalInput }
               placeholder='文章名称'
               value = { this.state.articleTitle }
               onChange = { (e) => {
                 this.setState({
                   articleTitle: e.target.value
+                })
+              }}
+            ></Input>
+            <Input
+              className = { style.modalInput }
+              placeholder='分类'
+              value = { this.state.articleTag }
+              onChange = { (e) => {
+                this.setState({
+                  articleTag: e.target.value
                 })
               }}
             ></Input>

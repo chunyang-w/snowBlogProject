@@ -7,5 +7,6 @@ module.exports = new mongoose.Schema({
   online: Boolean,
   lastModified: Number,
   hits: Number,
+  tag: String,
   content: String
 });

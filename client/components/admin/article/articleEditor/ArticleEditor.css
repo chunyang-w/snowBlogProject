@@ -8,8 +8,20 @@
 .header {
   width: 100%;
   height: 50px;
-  background-color: antiquewhite;
   flex-grow: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  margin-right: 20px
 }
 
 .editor {

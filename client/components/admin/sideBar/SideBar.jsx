@@ -21,8 +21,13 @@ export default function SideBar() {
   }
 
   const routesElem = adminRoutes.children.map((route, idx) => {
+    let childList
     if (route.children === undefined) {
-      console.log(route)
+      childList = []
+    } else {
+      childList = route.children.filter( (e) => e.showInMenu)
+    }
+    if (childList.length === 0) {
       return (
         <Menu.Item
           key = { String(idx) }
@@ -40,10 +45,10 @@ export default function SideBar() {
           title = { route.title }
         >
           {
-            route.children.map((subRoute, idx) => {
+            childList.map((subRoute, subIdx) => {
               return (
                 <Menu.Item
-                  key = { String(idx) }
+                  key = { String(idx) + String(subIdx) }
                   icon = { subRoute.icon }
                   onClick = { () => jumpToLink([route.path, subRoute.path]) }
                 >
@@ -60,7 +65,7 @@ export default function SideBar() {
   return (
     <Menu
       theme="dark"
-      defaultSelectedKeys={['1']}
+      defaultSelectedKeys={['0']}
       mode="inline"
     >
       { routesElem }

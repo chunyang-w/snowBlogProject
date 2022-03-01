@@ -17,6 +17,10 @@
   margin-right: 30px;
 }
 
+.modalInput {
+  margin-bottom: 10px;
+}
+
 .main {
   width: 100%;
   flex-grow: 1;
