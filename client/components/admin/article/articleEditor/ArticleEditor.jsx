@@ -16,22 +16,24 @@ import herald from '@client/herald/herald'
 
 export default function ArticleEditor() {
 
-  let editor
-  let articleId
   const params = useParams()
   const [articleData, setArticleData] = useState({})
+  const [editor, setEditor] = useState()
+  const [articleId, setArticleId] = useState()
 
   useEffect(async () => { // initialize Quill Editor
     let articleRaw
     let article
+    let editorInstance
     // fetch params:
-    articleId = params.articleId
-    console.log('Params fetched:', params)
+    const id = params.articleId
+    setArticleId(id)
+    console.log('articleId:', id)
     // create Quill instance
-    editor = new Quill('#admin-editor-content', editorOptions)
-    console.log('QuillEditor created:',editor)
+    editorInstance = new Quill('#admin-editor-content', editorOptions)
+    console.log('QuillEditor created:',editorInstance)
     // fetch context
-    articleRaw = await getArticle(articleId)
+    articleRaw = await getArticle(id)
     article = articleRaw.data
     setArticleData(article)
     console.log('Editor Context:', article)
@@ -40,8 +42,10 @@ export default function ArticleEditor() {
       console.log('parsing:', article.content)
       const content = JSON.parse(article.content)
       console.log('setting content', content)
-      editor.setContents(content)
+      editorInstance.setContents(content)
     }
+    // setEditor
+    setEditor(editorInstance)
   }, [])
 
   return (
@@ -55,8 +59,9 @@ export default function ArticleEditor() {
             icon = { <SaveOutlined/> }
             onClick = {() => {
               const content = editor.getContents()
-              console.log('content got:', content)
-              setContent(articleId, JSON.stringify(content))
+              const plainText = editor.getText()
+              console.log('content got:', content, plainText, articleId)
+              setContent(articleId, JSON.stringify(content), plainText)
               .then(() => {
                 message.success('保存成功')
               })
@@ -96,10 +101,12 @@ async function getArticle(articleId) {
   })
 }
 
-async function setContent(articleId, content) {
+async function setContent(articleId, content, plainText) {
+  const summary = (plainText.length < 200 ? plainText : plainText.slice(200)).replace(/\n/g, ' ')
   return herald.put('admin/article', {
     articleId: articleId,
     content: content,
-    lastModified: new Date().getTime()
+    lastModified: new Date().getTime(),
+    summary: summary
   })
 }

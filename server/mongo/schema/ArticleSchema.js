@@ -8,5 +8,6 @@ module.exports = new mongoose.Schema({
   lastModified: Number,
   hits: Number,
   tag: String,
+  summary: String,
   content: String
 });

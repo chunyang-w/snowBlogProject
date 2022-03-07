@@ -20,12 +20,6 @@ module.exports = {
     publicPath: '/',
     clean: true
   },
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all'
-  //   }
-  // },
-
   // plugin configurations
   plugins: [
     new HtmlWebpackPlugin({
@@ -60,7 +54,9 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true
+              modules: {
+                localIdentName: "[path][name]_[local]-[hash:base64:4]",
+              }
             }
           }
         ],

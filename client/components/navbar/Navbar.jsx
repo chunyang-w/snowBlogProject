@@ -46,9 +46,13 @@ export class NavBar extends React.Component {
       </Dropdown> :
       <div className={ style.itemContainer }>
         {
-          linkArr.map((e) => {
+          linkArr.map((e, idx) => {
             return (
-              <Item itemName = { e.name } linkPath = { e.path }/>
+              <Item
+                itemName = { e.name }
+                linkPath = { e.path }
+                key = { idx }
+                />
             )
           })
         }

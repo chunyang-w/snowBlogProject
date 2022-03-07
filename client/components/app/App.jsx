@@ -8,10 +8,14 @@ import { blog } from '../../../config/config'
 export class App extends React.Component {
   render () {
     return (
-      <div>
+      <div className = { style.container }>
         <NavBar className={ style.navBar } blogName={blog.blogName}/>
-        <div className={ style.spacer }></div>
-        <Outlet />
+ 
+        <div className = { style.main }>
+          <div className = { style.outLet }>
+            <Outlet />
+          </div>
+        </div>
       </div>
     )
   }

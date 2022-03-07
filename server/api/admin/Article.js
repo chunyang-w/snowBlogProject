@@ -14,6 +14,7 @@ router.post('/', async (req, res) => {
     lastModified: new Date().getTime(),
     hits: 0,
     content: '',
+    summary: '',
     tag: req.body.tag
   })
   await newArticle.save()

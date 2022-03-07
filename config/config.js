@@ -9,7 +9,7 @@ const config = {
     }
   },
   browserWindow: {
-    limit: 950
+    limit: 600
   },
   style: {
   },
@@ -21,6 +21,7 @@ const config = {
     testURL: 'http://localhost',
     prodURL: 'http://localhost',
     tokenExpireTime: 5000000,
+    articleBatch: 10,
   }
 }
 

@@ -12,12 +12,13 @@ staticServer.use(connectHistoryApiFallback())
 // API Server
 const apiServer = express()
 const interceptor = require('./utils/interceptor')
-apiServer.set('query parser', 'simple')
+apiServer.set('query parser', 'extended')
 apiServer.use(express.json())
 apiServer.use(cors())
 apiServer.use(interceptor)
 apiServer.use('/login', require('./api/Login'))
 apiServer.use('/admin', require('./api/admin/Admin'))
+apiServer.use('/open', require('./api/open/Open'))
 
 // Mongod Server
 const dbPath = path.resolve(__dirname, '../database/data')
