@@ -38,6 +38,12 @@ const routes = [
         })
       },
       {
+        path: 'articlePage/:articleId',
+        element: loadAsync(() => import( /* webpackChunkName: "articlePage" */ '../components/articlePage/ArticlePage.jsx') , {
+          title: 'articlePage'
+        })
+      },
+      {
         path: 'blackBoard',
         element: loadAsync(() => import( /* webpackChunkName: "blackBoard" */ '../components/blackBoard/BlackBoard.jsx'), {
           title: 'blackBoard',

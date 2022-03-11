@@ -5,6 +5,7 @@ import React, {
 import {
   useSelector,
 } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import style from './ArticleList.css'
 import SideBar from './sideBar/SideBar.jsx'
 import ArticleCard from './articleCard/ArticleCard.jsx'
@@ -12,6 +13,7 @@ import herald from '@client/herald/herald'
 import { v4 } from 'uuid'
 export default function ArticleList() {
 
+  const navigate = useNavigate()
   const clientType = useSelector((state) => state.window.deviceType)
   const [tagCollection, setTagCollection] = useState([])
   const [currentTag, setCurrentTag] = useState('')
@@ -40,9 +42,6 @@ export default function ArticleList() {
       }
     }
     scrollElem.addEventListener('scroll', handleScroll)
-    return function unmountListener() {
-      scrollElem.removeEventListener('scroll', handleScroll)
-    }
   }, [currentTag])
 
   useEffect(() => {
@@ -102,6 +101,12 @@ export default function ArticleList() {
               <ArticleCard
                 key = { article._id }
                 article = { article }
+                onClick = {
+                  () => {
+                    console.log('cardClicked')
+                    navigate(`/articlePage/${article._id}`)
+                  }
+                }
               />
             ))
           }
@@ -129,7 +134,6 @@ function loadArticle(minTime, keyword, tag) {
 function getMinTime(articles, minTime) {
   let res
   articles.forEach(article => {
-    console.log(article.created)
     if(article.created <= minTime) {
       res = article.created
       minTime = res

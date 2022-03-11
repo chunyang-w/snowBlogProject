@@ -9,7 +9,10 @@ import string2color from '@client/util/string2color'
 
 export default function ArticleCard(props) {
   return (
-    <div className = { style.container }>
+    <div
+      className = { style.container }
+      onClick = { props.onClick }
+      >
       <div className = {style.headerBar}>
         <div className = { style.created}>
           { new Date(props.article.created).toLocaleDateString() }
