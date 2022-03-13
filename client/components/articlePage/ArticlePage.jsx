@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import style from './ArticlePage.css'
 import Quill from 'quill'
 import herald from '@client/herald/herald'
+import hljs from 'highlight.js/lib/common'
 
 export default function ArticleEditor() {
+
+  const clientType = useSelector((state) => state.window.deviceType)
   const params = useParams()
   const articleId = params.articleId
   const [articleContent, setArticleContent] = useState(null)
   const [editor, setEditor] = useState()
+
+  useEffect(() => {
+    document.querySelectorAll('pre').forEach((el) => {
+      hljs.highlightElement(el);
+    })
+  }, [articleContent])
 
   useEffect(() => {
     // get content
@@ -28,17 +38,14 @@ export default function ArticleEditor() {
       <div className = { style.header }>
 
       </div>
-      <button
-        onClick = {
-          () => console.log(editor.root.innerHTML)
-        }
-      > sfsdfssf ds</button>
       <div className = {style.editor} >
-        <div
-          id = 'open-editor-content'
-          className = { style.content }
-          style = { {border: 0} }
-          >
+        <div className = {clientType === 'client' ? style.contentWrapperClient : style.contentWrapperMobile}>
+          <div
+            id = 'open-editor-content'
+            className = { style.content }
+            style = { {border: 0} }
+            >
+          </div>
         </div>
       </div>
     </div>

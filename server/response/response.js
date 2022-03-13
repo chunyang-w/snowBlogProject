@@ -7,6 +7,7 @@ module.exports = class Response {
     // 1: failed, logic error
     // 2: failed, login token expire
     // 3: failed, token not valid
+    // 4: failed, image failed to save
     data,
     //message to be send
     message

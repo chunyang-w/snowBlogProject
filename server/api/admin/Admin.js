@@ -1,11 +1,8 @@
 const express = require('express')
-
-const articleRouter = require('./Article')
-const articleEditRouter = require('./ArticleEdit')
-
 const router = express.Router()
 
-router.use('/article', articleRouter)
-router.use('/articleEdit', articleEditRouter)
+router.use('/article', require('./Article'))
+router.use('/articleEdit', require('./ArticleEdit'))
+router.use('/asset', require('./Asset'))
 
 module.exports = router

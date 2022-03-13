@@ -9,7 +9,6 @@ import {
 // import history from '@client/router/history'
 import './global.css'
 import './global.js'
-
 import RootContainer from './components/RootContainer.jsx'
 
 // import App from './components/app/App.jsx'

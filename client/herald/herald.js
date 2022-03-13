@@ -10,7 +10,7 @@ const API = {
     process.env.NODE_ENV === 'test' ? config.server.testURL : 
     config.server.prodURL
   ) 
-    + ':' +String(config.server.apiPort),
+    + ':' + String(config.server.apiPort),
   timeout: '8000'
 }
 

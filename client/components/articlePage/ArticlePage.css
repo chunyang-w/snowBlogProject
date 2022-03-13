@@ -10,5 +10,16 @@
 }
 
 .editor {
-  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.contentWrapperClient {
+  width: 65%;
+}
+
+.contentWrapperMobile {
+  width: 95%;
 }
