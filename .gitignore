@@ -2,3 +2,5 @@
 /node_modules
 /database/data/*
 /database/log/*
+/server/public/articleImage/*
+/dist/*
