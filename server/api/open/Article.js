@@ -13,7 +13,8 @@ router.get('/', async (req, res) => {
   const filter = {
     articleTitle: { $regex: new RegExp(filterRaw.articleTitle) },
     created: { $lt: filterRaw.created },
-    tag: filterRaw.tag === '' ? { $regex: /.*/ } : filterRaw.tag
+    tag: filterRaw.tag === '' ? { $regex: /.*/ } : filterRaw.tag,
+    online: true
   }
   const articleList = await ArticleModel.find(filter, returnAttrs.join(' '))
     .limit(ARTICLE_BATCH)

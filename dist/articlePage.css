@@ -1,0 +1,25 @@
+.client-components-articlePage-ArticlePage_container-ykjk {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.client-components-articlePage-ArticlePage_header-cpue {
+
+}
+
+.client-components-articlePage-ArticlePage_editor-c2iI {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.client-components-articlePage-ArticlePage_contentWrapperClient-ztsW {
+  width: 65%;
+}
+
+.client-components-articlePage-ArticlePage_contentWrapperMobile-cLsB {
+  width: 95%;
+}

@@ -1,4 +1,4 @@
-@import url('../node_modules/highlight.js/styles/mono-blue.css');
+@import url('../node_modules/highlight.js/styles/base16/solarized-light.css');
 
 * {
   padding: 0px;

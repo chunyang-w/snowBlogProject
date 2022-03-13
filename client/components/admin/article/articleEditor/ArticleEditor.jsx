@@ -8,7 +8,7 @@ import {
   SaveOutlined
 } from '@ant-design/icons'
 import herald from '@client/herald/herald'
-import Quill from 'quill'
+import Quill from '@client/Editor/Editor'
 import ImageResize from 'quill-image-resize'
 import ImageUploader from 'quill-image-uploader'
 Quill.register('modules/imageResize', ImageResize)
@@ -23,6 +23,7 @@ export default function ArticleEditor() {
   const [articleId, setArticleId] = useState()
 
   useEffect(async () => { // initialize Quill Editor
+    console.log('all formats', Quill.imports)
     let articleRaw
     let article
     let editorInstance
@@ -48,12 +49,6 @@ export default function ArticleEditor() {
     // setEditor
     setEditor(editorInstance)
   }, [])
-
-  useEffect(() => {
-    document.querySelectorAll('pre').forEach((el) => {
-      hljs.highlightElement(el);
-    })
-  }, [articleData])
 
   return (
     <div className = { style.container }>
@@ -89,7 +84,10 @@ const editorOptions = {
   modules: {
     syntax: {
       highlight: text => {
-        return hljs.highlightAuto(text).value
+        console.log('****', text)
+        return (
+          hljs.highlightAuto(text).value
+        )
       }
     },
     toolbar: [
@@ -129,7 +127,6 @@ const editorOptions = {
     }
   },
   scrollingContainer: '.ql-editor',
-  placeholder: 'Compose an epic...',
   theme: 'snow'
 }
 
@@ -143,7 +140,7 @@ async function getArticle(articleId) {
 }
 
 async function setContent(articleId, content, plainText) {
-  const summary = (plainText.length < 200 ? plainText : plainText.slice(200)).replace(/\n/g, ' ')
+  const summary = (plainText.length < 200 ? plainText : plainText.slice(0,200)).replace(/\n/g, ' ')
   return herald.put('admin/article', {
     articleId: articleId,
     content: content,
