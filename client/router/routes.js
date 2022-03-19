@@ -15,7 +15,8 @@ import { setNeedLogin } from '@client/store/adminLogin/adminLogin'
 // router icon:
 import {
   FormOutlined,
-  MessageOutlined
+  MessageOutlined,
+  HomeOutlined,
 } from '@ant-design/icons'
 
 
@@ -58,6 +59,40 @@ const routes = [
     }),
     children: [
       {
+        path: 'homePages',
+        title: '主页管理',
+        icon: <HomeOutlined/>,
+        children: [
+          {
+            path: 'index',
+            title: '首页管理',
+            index: true,
+            showInMenu: true,
+            element: loadAsync(() => import( /* webpackChunkName: "adminHomePagesIndexPage" */ '../components/admin/homePages/indexPage/IndexPage.jsx' ), {
+              title: '首页管理'
+            })
+          },
+          {
+            path: 'content',
+            title: '内容页管理',
+            index: true,
+            showInMenu: true,
+            element: loadAsync(() => import( /* webpackChunkName: "adminHomePagesHomePagesContentPage" */ '../components/admin/homePages/contentPage/ContentPage.jsx' ), {
+              title: '内容页管理'
+            })
+          },
+          {
+            path: 'footer',
+            title: '末页管理',
+            index: true,
+            showInMenu: true,
+            element: loadAsync(() => import( /* webpackChunkName: "adminHomePagesFooterPage" */ '../components/admin/homePages/footerPage/footerPage.jsx' ), {
+              title: '末页管理'
+            })
+          },
+        ]
+      },
+      {
         path: 'article',
         title: '文章管理',
         icon: <FormOutlined />,
@@ -88,7 +123,7 @@ const routes = [
         element: loadAsync(() => import( /* webpackChunkName: "adminMessage" */ '../components/admin/message/Message.jsx' ), {
           title: '留言管理'
         })
-      }
+      },
     ]
   },
   {

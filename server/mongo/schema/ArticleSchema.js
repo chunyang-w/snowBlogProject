@@ -10,4 +10,4 @@ module.exports = new mongoose.Schema({
   tag: String,
   summary: String,
   content: String
-});
+})

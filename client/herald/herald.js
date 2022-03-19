@@ -50,6 +50,7 @@ herald.interceptors.response.use(
   },
   err => {
     console.log('[herald] response failed:', err)
+    return Promise.reject(err)
   }
 )
 

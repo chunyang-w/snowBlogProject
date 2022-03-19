@@ -5,4 +5,4 @@ module.exports = new mongoose.Schema({
     passwd: String,
     token: String,
     expireTime: Number
-});
+})
