@@ -12,6 +12,7 @@ export class App extends React.Component {
         <NavBar className={ style.navBar } blogName={blog.blogName}/>
  
         <div className = { style.main }>
+          <div className = { style.spacer }></div>
           <div className = { style.outLet }>
             <Outlet />
           </div>

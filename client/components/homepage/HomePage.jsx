@@ -1,30 +1,85 @@
-import React from 'react'
+import React, {
+  useState,
+  useEffect
+} from 'react'
+import {
+  useSelector,
+} from 'react-redux'
 import ReactFullpage from '@fullpage/react-fullpage'
+import herald from '@client/herald/herald'
+import IndexPage from './indexPage/IndexPage.jsx'
+import ContentPage from './contentPage/ContentPage.jsx'
+import FooterPage from './footerPage/footerPage.jsx'
 import style from './HomePage.css'
 
-export default class NavBar extends React.Component {
-  render () {
-    return (
-      <ReactFullpage
-        scrollingSpeed = {1000}
-        dragAndMove = {'vertical'}
-        verticalCentered = {false}
+export default function HomePage() {
 
-        render={({state, fullpageApi}) => {
+  const [loading, setLoading] = useState(true)
+  const [dataReceived, setDateReceived] = useState(false)
+  const [pages, setPages] = useState([])
+  const [pagesElem, setPagesElem] = useState([])
+  const [assembled, setAssembled] = useState(false)
+
+  useEffect(() => {
+    herald.get('/open/allPages')
+    .then(res => {
+      console.log('allPages:', res.data)
+      setPages(
+        res.data.map(page => {
           return (
-            <div className={ style.fullPageContainer }>
-              <ReactFullpage.Wrapper>
-                <div className='section' id="section1">
-                  <div className={style.innerPage}>s</div>
-                </div>
-                <div className='section' id="section2">
-                  <div className={style.innerPage}>s</div>
-                </div>
-              </ReactFullpage.Wrapper>
+            <div class = 'section' id = { page._id }>
+              <div className = { style.sectionHeight }>
+                {
+                  page.type === 'indexPage' ? <IndexPage pageData = { page }/> : 
+                  page.type === 'footerPage' ? <FooterPage pageData = { page }/> : 
+                  <ContentPage pageData = { page }/>
+                }
+              </div>
             </div>
           )
-        }}
-      />
-    )
-  }
+        })
+      )
+      console.log('mounted')
+      setDateReceived(true)
+    })
+  }, [])
+  
+  useEffect(() => {
+    console.log('pages changed')
+    if (dataReceived) {
+      console.log('data received, processing... ')
+      setPagesElem(
+        <ReactFullpage
+          scrollingSpeed = {900}
+          dragAndMove = {'vertical'}
+          verticalCentered = {false}
+
+          render={({state, fullpageApi}) => {
+            console.log('in render', pages)
+            return (
+              pages
+            )
+          }}
+        />
+      )
+      console.log('assembled')
+      setAssembled(true)
+    }
+  }, [pages, dataReceived])
+
+  useEffect(() => {
+    if (assembled) {
+      setLoading(false)
+    }
+    console.log('loaded', assembled)
+  }, [pagesElem, assembled])
+
+  useEffect(() => {
+    console.log('loading:', loading, 'pagesElem', pagesElem)
+  }, [loading])
+
+  return (
+    loading ? <div>loadingsssss</div> : pagesElem
+  )
+
 }

@@ -22,7 +22,8 @@ async function mongoSetUp() {
   if (indexPage === null) {
     console.log('Create Index Page')
     new PageModel({
-      type: 'indexPage'
+      type: 'indexPage',
+      sort: -Number.MAX_SAFE_INTEGER
     }).save()
   } else {
     console.log('Index Page already exist: ', indexPage)
@@ -35,7 +36,8 @@ async function mongoSetUp() {
   if (footerPage === null) {
     console.log('Create Index Page')
     new PageModel({
-      type: 'footerPage'
+      type: 'footerPage',
+      sort: Number.MAX_SAFE_INTEGER
     }).save()
   } else {
     console.log('footerPage already exist: ', footerPage)

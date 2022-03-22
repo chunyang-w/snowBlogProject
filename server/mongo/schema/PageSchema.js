@@ -10,6 +10,7 @@ module.exports = new mongoose.Schema({
       type: String,
       default: 'contentPage'
     },
+    sort: Number,
     textLinkList: [ TextLinkSchema ],
     iconLinkList: []
 })

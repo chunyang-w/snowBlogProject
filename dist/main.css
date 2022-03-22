@@ -6340,14 +6340,23 @@ a.ant-btn-sm {
 .client-components-app-App_main-_JUM {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.client-components-app-App_spacer-J8bM {
+  height: 50px;
+  flex-grow: 0;
 }
 
 .client-components-app-App_outLet-atrY {
-  padding-top: 50px;
-  height: 100%;
-  max-height: 100%;
-  width: 100%;
+  box-sizing: border-box;
+  flex-grow: 1;
+  /* padding: 20px; */
+  height: 0px;
+  width: 100vw;
 }
+
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable */

@@ -4,3 +4,50 @@
   padding: 0px;
   margin: 0px;
 }
+
+.snow-blog-font {
+  margin-bottom: 0.2em;
+  color: black
+}
+
+.snow-blog-font {
+  color: black
+}
+
+.snow-blog-link:hover {
+  color:rgb(139, 139, 139)
+}
+
+.snow-blog-link::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #00000091;
+  transition: all .3s;
+}
+
+.snow-blog-link:hover::before {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+
+.snow-blog-font-extraLarge {
+  font-size: 37px;
+}
+.snow-blog-font-large {
+  font-size: 28px;
+}
+.snow-blog-font-medium {
+  font-size: 20px;
+}
+.snow-blog-font-small {
+  font-size: 18px;
+}
+.snow-blog-font-extraSmall {
+  font-size: 10px;
+}
