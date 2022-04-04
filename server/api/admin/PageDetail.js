@@ -5,8 +5,8 @@ const Response = require('../../response/response')
 const TextLinkModel = require('../../mongo/model/TextLinkModel')
 
 router.put('/', async (req, res) => {
-  const { pageId, indexImageList, textLinkData, iconLinkData } = req.body
-  console.log('in admin/pageDetail.get', indexImageList, textLinkData)
+  const { pageId, indexImageList, textLinkData, iconLinkData, pageName, pageSort, pageExtraInfo } = req.body
+  console.log('in admin/pageDetail.put', indexImageList, textLinkData)
   const textLinkList = []
   const Page = await PageModel.findOne({ _id: pageId })
 
@@ -25,15 +25,31 @@ router.put('/', async (req, res) => {
   Page.textLinkList = textLinkList
 
   // save PageImage
+  if (indexImageList !== undefined) {
+    console.log('pageId', pageId, indexImageList[0].url)
+    const pageImagePath = indexImageList[0].url
+    const pathList = pageImagePath.split('/')
+    const pathPure = '/asset/homePage/' + pathList[pathList.length - 1]
+    Page.imageUrl = pathPure
+  }
 
-  console.log('pageId', pageId, indexImageList[0].url)
-  const pageImagePath = indexImageList[0].url
-  const pathList = pageImagePath.split('/')
-  const pathPure = '/asset/indexPage/' + pathList[pathList.length - 1]
-  Page.imageUrl = pathPure
+
+  // save PageName
+  if (pageName !== undefined) {
+    Page.name = pageName
+  }
+
+  // save PageSort
+  if (pageSort !== undefined) {
+    Page.sort = pageSort
+  }
+
+  // save PageExtraInfo
+  if (pageExtraInfo !== undefined) {
+    Page.extraInfo = pageExtraInfo
+  }
 
   // savePage
-
   await Page.save()
 
   res.send(new Response({
@@ -45,7 +61,28 @@ router.put('/', async (req, res) => {
 
 router.post('/', async(req, res) => {
   console.log('in admin/pageDetail.post')
-  
+  await new PageModel({
+    type: 'contentPage',
+    sort: req.body.sort,
+    name: req.body.name
+  }).save()
+  res.send(new Response({
+    code: 0,
+    data: null,
+    message: 'contentPage created'
+  }))
+})
+
+router.delete('/', async(req, res) => {
+  console.log('in admin/pageDetail.delete')
+  await PageModel.deleteOne({
+    _id: req.body._id
+  })
+  res.send(new Response({
+    code: 0,
+    data: null,
+    message: 'delete success'
+  }))
 })
 
 module.exports = router

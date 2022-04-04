@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 module.exports = new mongoose.Schema({
   clickable: {
     type: Boolean,
-    default: false
+    default: true,
   },
   // fontSize possible value:
   // extraLarge

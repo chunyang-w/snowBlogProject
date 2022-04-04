@@ -5,13 +5,6 @@ import { useSelector } from 'react-redux'
 import style from './IndexPage.css'
 import fontSize2className, {  } from '@client/util/fontSize2className'
 
-// props: pageData: {
-//  iconLinkList: [],
-//  sort: Number,
-//  textLInkList: [],
-//  type: String
-// }
-
 export default function IndexPage(props) {
 
   const clientType = useSelector((state) => state.window.deviceType)

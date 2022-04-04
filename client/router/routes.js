@@ -82,11 +82,20 @@ const routes = [
             })
           },
           {
+            path: 'contentDetail/:pageId',
+            title: '内容页具体管理',
+            index: true,
+            showInMenu: false,
+            element: loadAsync(() => import( /* webpackChunkName: "adminHomePagesHomePagesContentPageDetail" */ '../components/admin/homePages/contentPageDetail/ContentPageDetail.jsx' ), {
+              title: '内容页具体管理'
+            })
+          },
+          {
             path: 'footer',
             title: '末页管理',
             index: true,
             showInMenu: true,
-            element: loadAsync(() => import( /* webpackChunkName: "adminHomePagesFooterPage" */ '../components/admin/homePages/footerPage/footerPage.jsx' ), {
+            element: loadAsync(() => import( /* webpackChunkName: "adminHomePagesFooterPage" */ '../components/admin/homePages/footerPage/FooterPage.jsx' ), {
               title: '末页管理'
             })
           },

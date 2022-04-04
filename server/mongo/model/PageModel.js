@@ -1,4 +1,4 @@
 const mongoose = require('mongoose')
-const IndexPageSchema = require('../schema/PageSchema')
+const PageSchema = require('../schema/PageSchema')
 
-module.exports = mongoose.model('Page', IndexPageSchema)
+module.exports = mongoose.model('Page', PageSchema)

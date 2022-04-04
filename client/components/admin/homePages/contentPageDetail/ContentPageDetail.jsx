@@ -2,6 +2,7 @@ import React, {
   useEffect,
   useState
 } from 'react'
+import { useParams } from 'react-router-dom'
 import {
   SaveOutlined,
   UploadOutlined,
@@ -16,7 +17,7 @@ import {
   Input,
   message,
 } from 'antd'
-import style from './IndexPage.css'
+import style from './ContentPageDetail.css'
 import herald from '@client/herald/herald'
 import config from '../../../../../config/config'
 
@@ -29,20 +30,30 @@ const serverUrl= (
 const { Column } = Table
 const { Option } = Select
 
+export default function ContentPageDetail() {
 
-export default function() {
-  const [pageId, setPageId] = useState('')
+  const params = useParams()
+  const pageId = params.pageId
+  const [pageName, setPageName] = useState('')
+  const [pageSort, setPageSort] = useState(undefined)
   const [indexImageList, setIndexImageList] = useState([])
   const [textLinkData, setTextLinkData] = useState([])
   const [iconLinkData, setIconLinkData] = useState([])
+
+  useEffect(() => {
+    console.log('contentPageDetailLoaded', params, params.pageId)
+  }, [params])
+
   async function uploadForm() {
     console.log('in uploadForm')
-    console.log('indexImageList & textLinkData:', indexImageList, textLinkData)
+    console.log('indexImageList & textLinkData:', indexImageList, textLinkData, pageName, pageSort)
     const res = await herald.put('/admin/pageDetail', {
       pageId,
+      pageSort,
+      pageName,
       indexImageList,
       textLinkData,
-      iconLinkData
+      iconLinkData,
     })
     message.success('保存成功')
     console.log(res)
@@ -111,7 +122,7 @@ export default function() {
     console.log(record)
     const id = record._id
     setTextLinkData((textLinkData.filter((elem) => {
-          return elem._id !== id
+      return elem._id !== id
     })))
   }
 
@@ -129,7 +140,8 @@ export default function() {
   function getPageInfo() {
     herald.get('/open/pageDetail', {
       params: {
-        type: 'indexPage'
+        type: 'contentPage',
+        _id: pageId
       }
     })
     .then((res) => {
@@ -139,7 +151,6 @@ export default function() {
       const fileNameRaw = fileNameRawArr[fileNameRawArr.length - 1]
       const fileName = fileNameRaw.length > 36 ? fileNameRaw.slice(36, fileNameRaw.length) : fileNameRaw
       console.log('indexPage.get res:', res)
-      setPageId(res.data._id)
       setIndexImageList([
         {
           uid: res.data._id,
@@ -151,6 +162,9 @@ export default function() {
         }
       ])
       setTextLinkData(res.data.textLinkList)
+      console.log('ready to set name and sort', res.data.name, res.data.sort)
+      setPageName(res.data.name)
+      setPageSort(res.data.sort)
     })
     .catch(err => {
       console.log('upload failed', err)
@@ -184,15 +198,36 @@ export default function() {
               fileList = { [...indexImageList] }
               onChange = { onFileChange }
             >
-              <Button icon={<UploadOutlined />}>上传主页图片</Button>
+              <Button icon={<UploadOutlined />}>上传内容页图片</Button>
             </Upload>
+          </div>
+
+          <div>
+            <span>内容页名称</span>
+            <Input
+              value = { pageName }
+              onChange = { (e) => {
+                setPageName(e.target.value)
+              } }
+            ></Input>
+          </div>
+            
+          <div>
+            <span>内容页排序</span>
+            <Input
+              type = 'number'
+              value = { pageSort }
+              onChange = { (e) => {
+                setPageSort(e.target.value)
+              } }
+            ></Input>
           </div>
         </div>
 
         <div className = { style.textLinkArea }>
           <div className = { style.textLinkAreaToolBar }>
             <div>
-              <h3>主页文字（链接配置）</h3>
+              <h3>内容页文字（链接配置）</h3>
             </div>
             <Button
               icon = { < PlusSquareOutlined/>}

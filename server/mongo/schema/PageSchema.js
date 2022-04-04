@@ -2,15 +2,20 @@ const mongoose = require('mongoose')
 const TextLinkSchema = require('./TextLinkSchema')
 
 module.exports = new mongoose.Schema({
+    name: String,
     imageUrl: {
       type: String,
-      default: '/asset/indexPage/indexPageImage.png'
+      default: '/asset/homePage/default.jpeg'
     },
-    type: { // define PageType. possible value: indexPage, contentPage, footerPage
+    type: { // define PageType. possible value, contentPage, footerPage
       type: String,
       default: 'contentPage'
     },
     sort: Number,
     textLinkList: [ TextLinkSchema ],
-    iconLinkList: []
+    iconLinkList: [],
+    extraInfo: {
+      type: String,
+      default: ''
+    }
 })

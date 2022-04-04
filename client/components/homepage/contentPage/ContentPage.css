@@ -1,0 +1,45 @@
+.container {
+  height: 100%;
+  width: 100%;
+  /* background-color: aqua; */
+  display: flex;
+}
+
+.imageContainer {
+  /* background-color: yellowgreen; */
+  flex: 6 0 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+}
+  .imageWrapper {
+    height: 100%;
+    width: 100%;
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .imageBox {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+.descriptionContainer {
+  /* background-color: azure; */
+  flex: 4 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 20px 70px 20px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+  .descriptionCenterBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

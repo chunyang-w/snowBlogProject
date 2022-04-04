@@ -42,7 +42,6 @@ herald.interceptors.response.use(
           needLogin: true,
           token: ''
         }))
-        message.warning(res.data.message)
       }
       return Promise.reject(res.data.message)
     }

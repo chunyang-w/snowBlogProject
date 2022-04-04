@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
       uploadPath = ASSET_PATH + '/articleImage'
       break
     case 'indexPageImage':
-      uploadPath = ASSET_PATH + '/indexPage'
+      uploadPath = ASSET_PATH + '/homePage'
       break
     default:
       uploadPath = ASSET_PATH
