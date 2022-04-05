@@ -19,6 +19,7 @@ import {
 import style from './IndexPage.css'
 import herald from '@client/herald/herald'
 import config from '../../../../../config/config'
+import ImgCrop from 'antd-img-crop'
 
 const serverUrl= (
   process.env.NODE_ENV === 'dev' ? config.server.devURL :
@@ -177,15 +178,17 @@ export default function() {
       <div className = { style.mainArea }>
         <div className = { style.uploadArea }>
           <div>
-            <Upload
-              key = {'123'}
-              maxCount = { 1 }
-              customRequest = { uploadImage }
-              fileList = { [...indexImageList] }
-              onChange = { onFileChange }
-            >
-              <Button icon={<UploadOutlined />}>上传主页图片</Button>
-            </Upload>
+            <ImgCrop>
+              <Upload
+                key = {'123'}
+                maxCount = { 1 }
+                customRequest = { uploadImage }
+                fileList = { [...indexImageList] }
+                onChange = { onFileChange }
+              >
+                <Button icon={<UploadOutlined />}>上传主页图片</Button>
+              </Upload>
+            </ImgCrop>
           </div>
         </div>
 

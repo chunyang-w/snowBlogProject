@@ -22,6 +22,8 @@
   }
     .imageBox {
       width: 65%;
+      height: auto;
+      aspect-ratio: 1/1;
       border-radius: 50%;
     }
 .descriptionContainer {

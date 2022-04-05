@@ -19,5 +19,6 @@
   ],
   "path-intellisense.mappings": {
     "@client": "${workspaceRoot}/client"
-  }
+  },
+  "terminal.integrated.defaultProfile.windows": ""
 }
