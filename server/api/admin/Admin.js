@@ -6,5 +6,6 @@ router.use('/articleEdit', require('./ArticleEdit'))
 router.use('/asset', require('./Asset'))
 router.use('/pageDetail', require('./PageDetail'))
 router.use('/textLink', require('./TextLink'))
+router.use('/comment', require('./Comment'))
 
 module.exports = router

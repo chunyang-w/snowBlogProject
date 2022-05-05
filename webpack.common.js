@@ -1,4 +1,5 @@
 // import modules
+const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -12,7 +13,10 @@ module.exports = {
     }
   },
   // entry and output
-  entry: './client/index.jsx',
+  entry: [
+    'webpack-hot-middleware/client?reload=true',
+    './client/index.jsx'
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
@@ -29,7 +33,8 @@ module.exports = {
     new BundleAnalyzerPlugin({
       analyzerPort: 3301,
       openAnalyzer: false
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 
   // module loaders

@@ -1,6 +1,6 @@
 const config = {
   blog: {
-    blogName: 'snow2512\'s blog'
+    blogName: '狸花猫 snow 的博客'
   },
   admin: {
     login: {

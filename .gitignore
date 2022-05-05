@@ -4,3 +4,5 @@
 /database/log/*
 /server/public/articleImage/*
 /dist/*
+/graph
+/docs

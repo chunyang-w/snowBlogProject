@@ -1,10 +1,13 @@
 import React from 'react'
+import Comment from '../comment/Comment.jsx'
 
 export default class ArticleList extends React.Component {
   render() {
     return (
       <div>
-        <h1>BlackBoard</h1>
+        <Comment
+          ownerArticleId = { -1 }
+        />
       </div>
     )
   }

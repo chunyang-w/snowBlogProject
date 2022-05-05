@@ -1,0 +1,216 @@
+Date : 2022-04-14 22:58:20
+Directory : /Users/will/projects/blog
+Total : 133 files,  16021 codes, 125 comments, 735 blanks, all 16881 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          3 |      8,935 |          1 |          2 |      8,938 |
+| JavaScript React   |         29 |      2,594 |         27 |        213 |      2,834 |
+| CSS                |         26 |      1,798 |         20 |        123 |      1,941 |
+| JavaScript         |         56 |      1,253 |         71 |        155 |      1,479 |
+| Draw.io            |          6 |        762 |          0 |          0 |        762 |
+| Markdown           |         11 |        659 |          0 |        242 |        901 |
+| HTML               |          1 |         12 |          0 |          0 |         12 |
+| JSON with Comments |          1 |          8 |          6 |          0 |         14 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                   |        133 |     16,021 |        125 |        735 |     16,881 |
+| client                                                                                              |         69 |      3,837 |         52 |        376 |      4,265 |
+| client/Editor                                                                                       |          1 |          5 |          0 |          1 |          6 |
+| client/components                                                                                   |         51 |      3,367 |         35 |        321 |      3,723 |
+| client/components/admin                                                                             |         21 |      1,917 |          6 |        170 |      2,093 |
+| client/components/admin/article                                                                     |          4 |        448 |          6 |         29 |        483 |
+| client/components/admin/article/articleEditor                                                       |          2 |        175 |          6 |         13 |        194 |
+| client/components/admin/dashboard                                                                   |          2 |         10 |          0 |          2 |         12 |
+| client/components/admin/homePages                                                                   |          8 |      1,132 |          0 |         90 |      1,222 |
+| client/components/admin/homePages/contentPage                                                       |          2 |        140 |          0 |         12 |        152 |
+| client/components/admin/homePages/contentPageDetail                                                 |          2 |        367 |          0 |         29 |        396 |
+| client/components/admin/homePages/footerPage                                                        |          2 |        286 |          0 |         25 |        311 |
+| client/components/admin/homePages/indexPage                                                         |          2 |        339 |          0 |         24 |        363 |
+| client/components/admin/login                                                                       |          2 |        145 |          0 |         19 |        164 |
+| client/components/admin/message                                                                     |          2 |         14 |          0 |          2 |         16 |
+| client/components/admin/sideBar                                                                     |          1 |         66 |          0 |          8 |         74 |
+| client/components/app                                                                               |          2 |         52 |          1 |          9 |         62 |
+| client/components/articleList                                                                       |          6 |        395 |          2 |         39 |        436 |
+| client/components/articleList/articleCard                                                           |          2 |        100 |          0 |         10 |        110 |
+| client/components/articleList/sideBar                                                               |          2 |        131 |          0 |         15 |        146 |
+| client/components/articlePage                                                                       |          2 |         83 |          1 |         13 |         97 |
+| client/components/blackBoard                                                                        |          1 |         13 |          0 |          1 |         14 |
+| client/components/comment                                                                           |          6 |        314 |         10 |         29 |        353 |
+| client/components/comment/commentList                                                               |          2 |         84 |          3 |          6 |         93 |
+| client/components/comment/commentSubmit                                                             |          2 |        145 |          4 |         11 |        160 |
+| client/components/homepage                                                                          |          8 |        447 |         15 |         49 |        511 |
+| client/components/homepage/contentPage                                                              |          2 |         93 |          4 |          8 |        105 |
+| client/components/homepage/footerPage                                                               |          2 |        175 |          7 |         19 |        201 |
+| client/components/homepage/indexPage                                                                |          2 |         93 |          4 |          8 |        105 |
+| client/components/navbar                                                                            |          4 |        131 |          0 |         10 |        141 |
+| client/components/navbar/item                                                                       |          2 |         30 |          0 |          3 |         33 |
+| client/herald                                                                                       |          1 |         51 |          0 |          5 |         56 |
+| client/router                                                                                       |          5 |        200 |          6 |         17 |        223 |
+| client/store                                                                                        |          4 |         91 |          0 |         16 |        107 |
+| client/store/adminLogin                                                                             |          1 |         32 |          0 |          3 |         35 |
+| client/store/sideBar                                                                                |          1 |         21 |          0 |          3 |         24 |
+| client/store/window                                                                                 |          1 |         14 |          0 |          3 |         17 |
+| client/template                                                                                     |          1 |         12 |          0 |          0 |         12 |
+| client/util                                                                                         |          3 |         30 |          3 |          3 |         36 |
+| comtomFile                                                                                          |          1 |        937 |          6 |          1 |        944 |
+| config                                                                                              |          1 |         27 |          0 |          1 |         28 |
+| docs                                                                                                |         10 |        655 |          0 |        239 |        894 |
+| graph                                                                                               |          6 |        762 |          0 |          0 |        762 |
+| scripts                                                                                             |          4 |        109 |         22 |         16 |        147 |
+| server                                                                                              |         33 |        636 |         25 |         87 |        748 |
+| server/api                                                                                          |         15 |        427 |          8 |         62 |        497 |
+| server/api/admin                                                                                    |          7 |        246 |          8 |         36 |        290 |
+| server/api/open                                                                                     |          7 |        129 |          0 |         21 |        150 |
+| server/mongo                                                                                        |         15 |        131 |          6 |         20 |        157 |
+| server/mongo/model                                                                                  |          7 |         18 |          0 |          7 |         25 |
+| server/mongo/schema                                                                                 |          7 |        102 |          6 |          8 |        116 |
+| server/response                                                                                     |          1 |         11 |          8 |          0 |         19 |
+| server/utils                                                                                        |          1 |         34 |          0 |          1 |         35 |
++-----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                            | language           | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| /Users/will/projects/blog/README.md                                                                 | Markdown           |          4 |          0 |          3 |          7 |
+| /Users/will/projects/blog/client/Editor/Editor.js                                                   | JavaScript         |          5 |          0 |          1 |          6 |
+| /Users/will/projects/blog/client/components/RootContainer.jsx                                       | JavaScript React   |         15 |          0 |          1 |         16 |
+| /Users/will/projects/blog/client/components/admin/Admin.css                                         | CSS                |         38 |          0 |          7 |         45 |
+| /Users/will/projects/blog/client/components/admin/Admin.jsx                                         | JavaScript React   |         64 |          0 |         13 |         77 |
+| /Users/will/projects/blog/client/components/admin/article/Article.css                               | CSS                |         24 |          0 |          4 |         28 |
+| /Users/will/projects/blog/client/components/admin/article/Article.jsx                               | JavaScript React   |        249 |          0 |         12 |        261 |
+| /Users/will/projects/blog/client/components/admin/article/articleEditor/ArticleEditor.css           | CSS                |         38 |          0 |          6 |         44 |
+| /Users/will/projects/blog/client/components/admin/article/articleEditor/ArticleEditor.jsx           | JavaScript React   |        137 |          6 |          7 |        150 |
+| /Users/will/projects/blog/client/components/admin/dashboard/Dashboard.css                           | CSS                |          0 |          0 |          1 |          1 |
+| /Users/will/projects/blog/client/components/admin/dashboard/Dashboard.jsx                           | JavaScript React   |         10 |          0 |          1 |         11 |
+| /Users/will/projects/blog/client/components/admin/homePages/contentPage/ContentPage.css             | CSS                |         24 |          0 |          2 |         26 |
+| /Users/will/projects/blog/client/components/admin/homePages/contentPage/ContentPage.jsx             | JavaScript React   |        116 |          0 |         10 |        126 |
+| /Users/will/projects/blog/client/components/admin/homePages/contentPageDetail/ContentPageDetail.css | CSS                |         48 |          0 |          9 |         57 |
+| /Users/will/projects/blog/client/components/admin/homePages/contentPageDetail/ContentPageDetail.jsx | JavaScript React   |        319 |          0 |         20 |        339 |
+| /Users/will/projects/blog/client/components/admin/homePages/footerPage/FooterPage.css               | CSS                |         57 |          0 |          9 |         66 |
+| /Users/will/projects/blog/client/components/admin/homePages/footerPage/FooterPage.jsx               | JavaScript React   |        229 |          0 |         16 |        245 |
+| /Users/will/projects/blog/client/components/admin/homePages/indexPage/IndexPage.css                 | CSS                |         48 |          0 |          9 |         57 |
+| /Users/will/projects/blog/client/components/admin/homePages/indexPage/IndexPage.jsx                 | JavaScript React   |        291 |          0 |         15 |        306 |
+| /Users/will/projects/blog/client/components/admin/login/Login.css                                   | CSS                |         73 |          0 |          9 |         82 |
+| /Users/will/projects/blog/client/components/admin/login/Login.jsx                                   | JavaScript React   |         72 |          0 |         10 |         82 |
+| /Users/will/projects/blog/client/components/admin/message/Message.css                               | CSS                |          0 |          0 |          1 |          1 |
+| /Users/will/projects/blog/client/components/admin/message/Message.jsx                               | JavaScript React   |         14 |          0 |          1 |         15 |
+| /Users/will/projects/blog/client/components/admin/sideBar/SideBar.jsx                               | JavaScript React   |         66 |          0 |          8 |         74 |
+| /Users/will/projects/blog/client/components/app/App.css                                             | CSS                |         24 |          1 |          5 |         30 |
+| /Users/will/projects/blog/client/components/app/App.jsx                                             | JavaScript React   |         28 |          0 |          4 |         32 |
+| /Users/will/projects/blog/client/components/articleList/ArticleList.css                             | CSS                |         29 |          2 |          4 |         35 |
+| /Users/will/projects/blog/client/components/articleList/ArticleList.jsx                             | JavaScript React   |        135 |          0 |         10 |        145 |
+| /Users/will/projects/blog/client/components/articleList/articleCard/ArticleCard.css                 | CSS                |         67 |          0 |          8 |         75 |
+| /Users/will/projects/blog/client/components/articleList/articleCard/ArticleCard.jsx                 | JavaScript React   |         33 |          0 |          2 |         35 |
+| /Users/will/projects/blog/client/components/articleList/sideBar/SideBar.css                         | CSS                |         48 |          0 |         10 |         58 |
+| /Users/will/projects/blog/client/components/articleList/sideBar/SideBar.jsx                         | JavaScript React   |         83 |          0 |          5 |         88 |
+| /Users/will/projects/blog/client/components/articlePage/ArticlePage.css                             | CSS                |         20 |          0 |          5 |         25 |
+| /Users/will/projects/blog/client/components/articlePage/ArticlePage.jsx                             | JavaScript React   |         63 |          1 |          8 |         72 |
+| /Users/will/projects/blog/client/components/blackBoard/BlackBoard.jsx                               | JavaScript React   |         13 |          0 |          1 |         14 |
+| /Users/will/projects/blog/client/components/comment/Comment.css                                     | CSS                |         43 |          0 |          3 |         46 |
+| /Users/will/projects/blog/client/components/comment/Comment.jsx                                     | JavaScript React   |         42 |          3 |          9 |         54 |
+| /Users/will/projects/blog/client/components/comment/commentList/CommentItem.css                     | CSS                |         32 |          0 |          0 |         32 |
+| /Users/will/projects/blog/client/components/comment/commentList/CommentItem.jsx                     | JavaScript React   |         52 |          3 |          6 |         61 |
+| /Users/will/projects/blog/client/components/comment/commentSubmit/CommentSubmit.css                 | CSS                |          0 |          0 |          1 |          1 |
+| /Users/will/projects/blog/client/components/comment/commentSubmit/CommentSubmit.jsx                 | JavaScript React   |        145 |          4 |         10 |        159 |
+| /Users/will/projects/blog/client/components/homepage/HomePage.css                                   | CSS                |         10 |          0 |          5 |         15 |
+| /Users/will/projects/blog/client/components/homepage/HomePage.jsx                                   | JavaScript React   |         76 |          0 |          9 |         85 |
+| /Users/will/projects/blog/client/components/homepage/contentPage/ContentPage.css                    | CSS                |         39 |          4 |          3 |         46 |
+| /Users/will/projects/blog/client/components/homepage/contentPage/ContentPage.jsx                    | JavaScript React   |         54 |          0 |          5 |         59 |
+| /Users/will/projects/blog/client/components/homepage/footerPage/FooterPage.css                      | CSS                |         74 |          3 |          6 |         83 |
+| /Users/will/projects/blog/client/components/homepage/footerPage/FooterPage.jsx                      | JavaScript React   |        101 |          4 |         13 |        118 |
+| /Users/will/projects/blog/client/components/homepage/indexPage/IndexPage.css                        | CSS                |         39 |          4 |          3 |         46 |
+| /Users/will/projects/blog/client/components/homepage/indexPage/IndexPage.jsx                        | JavaScript React   |         54 |          0 |          5 |         59 |
+| /Users/will/projects/blog/client/components/navbar/Navbar.css                                       | CSS                |         26 |          0 |          2 |         28 |
+| /Users/will/projects/blog/client/components/navbar/Navbar.jsx                                       | JavaScript React   |         75 |          0 |          5 |         80 |
+| /Users/will/projects/blog/client/components/navbar/item/Item.css                                    | CSS                |         15 |          0 |          2 |         17 |
+| /Users/will/projects/blog/client/components/navbar/item/Item.jsx                                    | JavaScript React   |         15 |          0 |          1 |         16 |
+| /Users/will/projects/blog/client/global.css                                                         | CSS                |         45 |          0 |          8 |         53 |
+| /Users/will/projects/blog/client/global.js                                                          | JavaScript         |         15 |          2 |          3 |         20 |
+| /Users/will/projects/blog/client/herald/herald.js                                                   | JavaScript         |         51 |          0 |          5 |         56 |
+| /Users/will/projects/blog/client/index.jsx                                                          | JavaScript React   |         21 |          6 |          2 |         29 |
+| /Users/will/projects/blog/client/router/Guard.jsx                                                   | JavaScript React   |         22 |          0 |          4 |         26 |
+| /Users/will/projects/blog/client/router/interceptor.js                                              | JavaScript         |          7 |          0 |          2 |          9 |
+| /Users/will/projects/blog/client/router/loader.js                                                   | JavaScript         |         17 |          0 |          2 |         19 |
+| /Users/will/projects/blog/client/router/redirector.js                                               | JavaScript         |          4 |          1 |          1 |          6 |
+| /Users/will/projects/blog/client/router/routes.js                                                   | JavaScript         |        150 |          5 |          8 |        163 |
+| /Users/will/projects/blog/client/store/adminLogin/adminLogin.js                                     | JavaScript         |         32 |          0 |          3 |         35 |
+| /Users/will/projects/blog/client/store/index.js                                                     | JavaScript         |         24 |          0 |          7 |         31 |
+| /Users/will/projects/blog/client/store/sideBar/sideBar.js                                           | JavaScript         |         21 |          0 |          3 |         24 |
+| /Users/will/projects/blog/client/store/window/windowReducer.js                                      | JavaScript         |         14 |          0 |          3 |         17 |
+| /Users/will/projects/blog/client/template/index.html                                                | HTML               |         12 |          0 |          0 |         12 |
+| /Users/will/projects/blog/client/util/fontSize2className.js                                         | JavaScript         |         10 |          3 |          1 |         14 |
+| /Users/will/projects/blog/client/util/string2color.js                                               | JavaScript         |         10 |          0 |          1 |         11 |
+| /Users/will/projects/blog/client/util/typeCheck.js                                                  | JavaScript         |         10 |          0 |          1 |         11 |
+| /Users/will/projects/blog/comtomFile/quill.snow.css                                                 | CSS                |        937 |          6 |          1 |        944 |
+| /Users/will/projects/blog/config/config.js                                                          | JavaScript         |         27 |          0 |          1 |         28 |
+| /Users/will/projects/blog/docs/D00-设计.md                                                            | Markdown           |        273 |          0 |         85 |        358 |
+| /Users/will/projects/blog/docs/D01-框架搭建.md                                                          | Markdown           |          3 |          0 |          1 |          4 |
+| /Users/will/projects/blog/docs/D02-封装React路由.md                                                     | Markdown           |         50 |          0 |         23 |         73 |
+| /Users/will/projects/blog/docs/D03-数据表设计.md                                                         | Markdown           |         19 |          0 |          6 |         25 |
+| /Users/will/projects/blog/docs/L01-React-router.md                                                  | Markdown           |         10 |          0 |         10 |         20 |
+| /Users/will/projects/blog/docs/L02-CSS.md                                                           | Markdown           |        172 |          0 |         66 |        238 |
+| /Users/will/projects/blog/docs/L03-Mongo.md                                                         | Markdown           |         24 |          0 |         13 |         37 |
+| /Users/will/projects/blog/docs/L04-webpack.md                                                       | Markdown           |         42 |          0 |         19 |         61 |
+| /Users/will/projects/blog/docs/PIT-踩坑记录.md                                                          | Markdown           |         49 |          0 |         13 |         62 |
+| /Users/will/projects/blog/docs/X01-奇思妙想.md                                                          | Markdown           |         13 |          0 |          3 |         16 |
+| /Users/will/projects/blog/graph/AdminAccess.drawio                                                  | Draw.io            |        117 |          0 |          0 |        117 |
+| /Users/will/projects/blog/graph/AdminModule.drawio                                                  | Draw.io            |         70 |          0 |          0 |         70 |
+| /Users/will/projects/blog/graph/BSarch.drawio                                                       | Draw.io            |         63 |          0 |          0 |         63 |
+| /Users/will/projects/blog/graph/ERDigram.drawio                                                     | Draw.io            |        297 |          0 |          0 |        297 |
+| /Users/will/projects/blog/graph/SystemModule.drawio                                                 | Draw.io            |         71 |          0 |          0 |         71 |
+| /Users/will/projects/blog/graph/sysyemUseCase.drawio                                                | Draw.io            |        144 |          0 |          0 |        144 |
+| /Users/will/projects/blog/index.js                                                                  | JavaScript         |          1 |          0 |          4 |          5 |
+| /Users/will/projects/blog/jsconfig.json                                                             | JSON with Comments |          8 |          6 |          0 |         14 |
+| /Users/will/projects/blog/nodemon.json                                                              | JSON               |          2 |          1 |          0 |          3 |
+| /Users/will/projects/blog/package-lock.json                                                         | JSON               |      8,858 |          0 |          1 |      8,859 |
+| /Users/will/projects/blog/package.json                                                              | JSON               |         75 |          0 |          1 |         76 |
+| /Users/will/projects/blog/scripts/dbSetup.js                                                        | JavaScript         |         42 |          3 |          4 |         49 |
+| /Users/will/projects/blog/scripts/launchApiServer.js                                                | JavaScript         |         24 |         11 |          6 |         41 |
+| /Users/will/projects/blog/scripts/launchStaticServer.js                                             | JavaScript         |         41 |          8 |          6 |         55 |
+| /Users/will/projects/blog/scripts/snowBlog.js                                                       | JavaScript         |          2 |          0 |          0 |          2 |
+| /Users/will/projects/blog/server/api/Login.js                                                       | JavaScript         |         52 |          0 |          5 |         57 |
+| /Users/will/projects/blog/server/api/admin/Admin.js                                                 | JavaScript         |          9 |          0 |          2 |         11 |
+| /Users/will/projects/blog/server/api/admin/Article.js                                               | JavaScript         |         56 |          1 |          7 |         64 |
+| /Users/will/projects/blog/server/api/admin/ArticleEdit.js                                           | JavaScript         |         21 |          0 |          5 |         26 |
+| /Users/will/projects/blog/server/api/admin/Asset.js                                                 | JavaScript         |         57 |          0 |          3 |         60 |
+| /Users/will/projects/blog/server/api/admin/Comment.js                                               | JavaScript         |          9 |          0 |          3 |         12 |
+| /Users/will/projects/blog/server/api/admin/PageDetail.js                                            | JavaScript         |         68 |          7 |         13 |         88 |
+| /Users/will/projects/blog/server/api/admin/TextLink.js                                              | JavaScript         |         26 |          0 |          3 |         29 |
+| /Users/will/projects/blog/server/api/open/AllPage.js                                                | JavaScript         |         22 |          0 |          2 |         24 |
+| /Users/will/projects/blog/server/api/open/Article.js                                                | JavaScript         |         26 |          0 |          3 |         29 |
+| /Users/will/projects/blog/server/api/open/ArticleContent.js                                         | JavaScript         |         15 |          0 |          3 |         18 |
+| /Users/will/projects/blog/server/api/open/Comment.js                                                | JavaScript         |         15 |          0 |          5 |         20 |
+| /Users/will/projects/blog/server/api/open/Open.js                                                   | JavaScript         |          9 |          0 |          2 |         11 |
+| /Users/will/projects/blog/server/api/open/PageDetail.js                                             | JavaScript         |         28 |          0 |          3 |         31 |
+| /Users/will/projects/blog/server/api/open/Tags.js                                                   | JavaScript         |         14 |          0 |          3 |         17 |
+| /Users/will/projects/blog/server/mongo/model/AdminModel.js                                          | JavaScript         |          3 |          0 |          1 |          4 |
+| /Users/will/projects/blog/server/mongo/model/ArticleModel.js                                        | JavaScript         |          3 |          0 |          1 |          4 |
+| /Users/will/projects/blog/server/mongo/model/CommentModel.js                                        | JavaScript         |          3 |          0 |          1 |          4 |
+| /Users/will/projects/blog/server/mongo/model/CommentatorModel.js                                    | JavaScript         |          3 |          0 |          1 |          4 |
+| /Users/will/projects/blog/server/mongo/model/IconLinkModel.js                                       | JavaScript         |          0 |          0 |          1 |          1 |
+| /Users/will/projects/blog/server/mongo/model/PageModel.js                                           | JavaScript         |          3 |          0 |          1 |          4 |
+| /Users/will/projects/blog/server/mongo/model/TextLinkModel.js                                       | JavaScript         |          3 |          0 |          1 |          4 |
+| /Users/will/projects/blog/server/mongo/mongo.js                                                     | JavaScript         |         11 |          0 |          5 |         16 |
+| /Users/will/projects/blog/server/mongo/schema/AdminSchema.js                                        | JavaScript         |          7 |          0 |          1 |          8 |
+| /Users/will/projects/blog/server/mongo/schema/ArticleSchema.js                                      | JavaScript         |         12 |          0 |          1 |         13 |
+| /Users/will/projects/blog/server/mongo/schema/CommentSchema.js                                      | JavaScript         |         25 |          0 |          2 |         27 |
+| /Users/will/projects/blog/server/mongo/schema/CommentatorSchema.js                                  | JavaScript         |         15 |          0 |          1 |         16 |
+| /Users/will/projects/blog/server/mongo/schema/IconLinkSchema.js                                     | JavaScript         |          0 |          0 |          1 |          1 |
+| /Users/will/projects/blog/server/mongo/schema/PageSchema.js                                         | JavaScript         |         20 |          0 |          1 |         21 |
+| /Users/will/projects/blog/server/mongo/schema/TextLinkSchema.js                                     | JavaScript         |         23 |          6 |          1 |         30 |
+| /Users/will/projects/blog/server/response/response.js                                               | JavaScript         |         11 |          8 |          0 |         19 |
+| /Users/will/projects/blog/server/servers.js                                                         | JavaScript         |         33 |          3 |          4 |         40 |
+| /Users/will/projects/blog/server/utils/interceptor.js                                               | JavaScript         |         34 |          0 |          1 |         35 |
+| /Users/will/projects/blog/webpack.common.js                                                         | JavaScript         |         87 |          9 |          2 |         98 |
+| /Users/will/projects/blog/webpack.dev.js                                                            | JavaScript         |         18 |          3 |          3 |         24 |
+| /Users/will/projects/blog/webpack.prod.js                                                           | JavaScript         |          5 |          1 |          1 |          7 |
+| Total                                                                                               |                    |     16,021 |        125 |        735 |     16,881 |
++-----------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

@@ -30,6 +30,7 @@
     "express": "^4.17.2",
     "formidable": "^2.0.1",
     "fullpage.js": "^3.1.2",
+    "generate-avatar": "^1.4.10",
     "highlight.js": "^11.5.0",
     "mongoose": "^6.2.2",
     "pm2": "^5.1.2",

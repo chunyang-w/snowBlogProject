@@ -129,9 +129,17 @@ const routes = [
         path: 'message',
         title: '留言管理',
         icon: <MessageOutlined />,
-        element: loadAsync(() => import( /* webpackChunkName: "adminMessage" */ '../components/admin/message/Message.jsx' ), {
-          title: '留言管理'
-        })
+        children: [
+          {
+            path: ':articleId',
+            title: '留言管理',
+            index: true,
+            showInMenu: true,
+            element: loadAsync(() => import( /* webpackChunkName: "adminMessage" */ '../components/admin/message/Message.jsx' ), {
+              title: '留言管理'
+            })
+          }
+        ]
       },
     ]
   },

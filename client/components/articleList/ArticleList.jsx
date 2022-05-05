@@ -11,10 +11,11 @@ import SideBar from './sideBar/SideBar.jsx'
 import ArticleCard from './articleCard/ArticleCard.jsx'
 import herald from '@client/herald/herald'
 import { v4 } from 'uuid'
+
 export default function ArticleList() {
 
-  const navigate = useNavigate()
   const clientType = useSelector((state) => state.window.deviceType)
+  const navigate = useNavigate()
   const [tagCollection, setTagCollection] = useState([])
   const [currentTag, setCurrentTag] = useState('')
   const [currentSearch, setCurrentSearch] = useState('')

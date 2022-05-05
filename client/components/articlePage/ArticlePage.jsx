@@ -5,6 +5,7 @@ import style from './ArticlePage.css'
 import Quill from 'quill'
 import herald from '@client/herald/herald'
 import hljs from 'highlight.js/lib/common'
+import Comment from '../comment/Comment.jsx'
 
 export default function ArticleEditor() {
 
@@ -48,6 +49,9 @@ export default function ArticleEditor() {
           </div>
         </div>
       </div>
+      <Comment
+        ownerArticleId = { articleId.toString() }
+      />
     </div>
   )
 }

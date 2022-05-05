@@ -26,10 +26,13 @@ if (process.env.NODE_ENV === 'dev') {
   const WebpackHotMiddleware = require('webpack-hot-middleware')
   const compiler = webpack(webpackConfig)
   staticServer.use(WebpackDevMiddleware(compiler, {
-    publicPath: '/',
+    publicPath: webpackConfig.output.publicPath,
     stats: 'errors-only',
   }))
-  staticServer.use(WebpackHotMiddleware(compiler))
+  staticServer.use(WebpackHotMiddleware(compiler, {
+    log: console.log,
+    heartbeat: 2 * 1000,
+  }))
 } else if (process.env.NODE_ENV ==='prod' | process.env.NODE_ENV === 'test') {
   // bundle up all resources and launch server
   const webpack = require('webpack')

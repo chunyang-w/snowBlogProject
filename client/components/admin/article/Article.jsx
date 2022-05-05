@@ -153,11 +153,11 @@ export default class Article extends React.Component {
               dataIndex = 'hits'
               key = 'hits'
             ></Column>
-            <Column
+            {/* <Column
               title = '评论'
               dataIndex = 'comments'
               key = 'comments'
-            ></Column>
+            ></Column> */}
             <Column
               title = '创建时间'
               dataIndex = 'created'
@@ -205,6 +205,10 @@ export default class Article extends React.Component {
               key = 'action'
               render = {(_, record) => (
                 <Space size = 'middle'>
+                  <Link
+                    to = { `/admin/message/${record._id}` }
+                    >管理留言
+                  </Link>
                   <Link
                     to = { `/admin/article/edit/${record._id}` }
                     >编辑文章

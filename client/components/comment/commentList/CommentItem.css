@@ -1,0 +1,32 @@
+.container {
+  width: 80%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.containerMobile {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  .commentContent {
+    width: 100%;
+    padding: 20px 10px 20px 40px;
+    background-color: rgba(241, 241, 241, 0.598);
+    border-radius: 10px;
+  }
+    .reference {
+      background-color: rgba(219, 219, 219, 0.636);
+      color: rgb(99, 99, 99);
+      border-radius: 8px;
+      padding: 10px 40px 10px 10px;
+    }
+    .commentContentBox {
+      display: inline-block;
+      margin: 10px;
+    }
+    .reply {
+      align-self: flex-end;
+    }

@@ -1,0 +1,46 @@
+.container {
+  width: 100%;
+}
+
+.containerSubmit {
+  width: 100%;
+  height: 500px;
+  background-color: rgb(40, 40, 40);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+  .submitContainer {
+    background-color: rgb(246, 246, 246);
+    width: 60%;
+    height: 60%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .submitContainerMobile {
+    background-color: rgb(246, 246, 246);
+    width: 90%;
+    height: 60%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .commentContainer {
+      width: 70%;
+    }
+    .commentContainerMobile{
+      width: 90%;
+    }
+
+
+  .commentList {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
