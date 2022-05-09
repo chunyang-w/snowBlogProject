@@ -20,7 +20,7 @@ npm install
 2. Override style sheet: 
    覆盖原有样式
 ```
-paste /custom/quill.snow.css -> /node_modules
+paste /custom/quill.snow.css -> /node_modules/quill/dist
 ```
 3. run following code:
 运行以下代码:
