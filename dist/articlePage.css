@@ -23,3 +23,97 @@
 .client-components-articlePage-ArticlePage_contentWrapperMobile-cLsB {
   width: 95%;
 }
+.client-components-comment-Comment_container-AXFW {
+  width: 100%;
+}
+
+.client-components-comment-Comment_containerSubmit-GJBj {
+  width: 100%;
+  height: 500px;
+  background-color: rgb(40, 40, 40);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+  .client-components-comment-Comment_submitContainer-H9kI {
+    background-color: rgb(246, 246, 246);
+    width: 60%;
+    height: 60%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .client-components-comment-Comment_submitContainerMobile-sCu7 {
+    background-color: rgb(246, 246, 246);
+    width: 90%;
+    height: 60%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .client-components-comment-Comment_commentContainer-mRLS {
+      width: 70%;
+    }
+    .client-components-comment-Comment_commentContainerMobile-HMWU{
+      width: 90%;
+    }
+
+
+  .client-components-comment-Comment_commentList-XbZd {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0px;
+  }
+
+.client-components-comment-commentList-CommentItem_container-SuHk {
+  width: 80%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.client-components-comment-commentList-CommentItem_containerMobile-QDVi {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  #client-components-comment-commentList-CommentItem_commentContainer-Z2TU {
+    width: 100%;
+  }
+  .client-components-comment-commentList-CommentItem_commentContent-MSvC {
+    width: 100%;
+    padding: 20px 10px 20px 40px;
+    background-color: rgba(241, 241, 241, 0.598);
+    border-radius: 10px;
+  }
+    .client-components-comment-commentList-CommentItem_reference-wXvh {
+      background-color: rgba(219, 219, 219, 0.636);
+      color: rgb(99, 99, 99);
+      border-radius: 8px;
+      padding: 10px 40px 10px 10px;
+    }
+    .client-components-comment-commentList-CommentItem_commentContentBox-tR3R {
+      display: inline-block;
+      margin: 10px;
+    }
+    .client-components-comment-commentList-CommentItem_reply-nxwh {
+      align-self: flex-end;
+    }
+.client-components-articlePage-InfoBar-InfoBar_container-RVyz {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding-left: 10%;
+  padding-top: 20px;
+}
+.client-components-articlePage-InfoBar-InfoBar_infoFont-VSzT {
+  color: gray;
+  font-size: small;
+}

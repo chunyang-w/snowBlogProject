@@ -1,12 +1,12 @@
 .client-components-homepage-indexPage-IndexPage_container-iq5C {
   height: 100%;
   width: 100%;
-  background-color: aqua;
+  /* background-color: aqua; */
   display: flex;
 }
 
 .client-components-homepage-indexPage-IndexPage_imageContainer-QNUq {
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
   flex: 6 0 60%;
   display: flex;
   justify-content: center;
@@ -15,21 +15,291 @@
   .client-components-homepage-indexPage-IndexPage_imageWrapper-zb7Q {
     height: 100%;
     width: 100%;
-    background-color: bisque;
+    /* background-color: bisque; */
     display: flex;
     justify-content: center;
     align-items: center;
   }
     .client-components-homepage-indexPage-IndexPage_imageBox-e4Av {
-      width: 80%;
+      width: 65%;
+      height: auto;
+      aspect-ratio: 1/1;
       border-radius: 50%;
     }
 .client-components-homepage-indexPage-IndexPage_descriptionContainer-SmE_ {
-  background-color: azure;
+  /* background-color: azure; */
   flex: 4 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 20px 70px 20px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+  .client-components-homepage-indexPage-IndexPage_descriptionCenterBox-fWPz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.client-components-homepage-contentPage-ContentPage_container-af55 {
+  height: 100%;
+  width: 100%;
+  /* background-color: aqua; */
+  display: flex;
+}
+
+.client-components-homepage-contentPage-ContentPage_imageContainer-dXwU {
+  /* background-color: yellowgreen; */
+  flex: 6 0 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+}
+  .client-components-homepage-contentPage-ContentPage_imageWrapper-iYbV {
+    height: 100%;
+    width: 100%;
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .client-components-homepage-contentPage-ContentPage_imageBox-sA89 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+.client-components-homepage-contentPage-ContentPage_descriptionContainer-YZR_ {
+  /* background-color: azure; */
+  flex: 4 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 20px 70px 20px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+  .client-components-homepage-contentPage-ContentPage_descriptionCenterBox-xb5d {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+.ant-divider {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+.ant-divider-vertical {
+  position: relative;
+  top: -0.06em;
+  display: inline-block;
+  height: 0.9em;
+  margin: 0 8px;
+  vertical-align: middle;
+  border-top: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+}
+.ant-divider-horizontal {
+  display: flex;
+  clear: both;
+  width: 100%;
+  min-width: 100%;
+  margin: 24px 0;
+}
+.ant-divider-horizontal.ant-divider-with-text {
+  display: flex;
+  margin: 16px 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-align: center;
+  border-top: 0;
+  border-top-color: rgba(0, 0, 0, 0.06);
+}
+.ant-divider-horizontal.ant-divider-with-text::before,
+.ant-divider-horizontal.ant-divider-with-text::after {
+  position: relative;
+  top: 50%;
+  width: 50%;
+  border-top: 1px solid transparent;
+  border-top-color: inherit;
+  border-bottom: 0;
+  transform: translateY(50%);
+  content: '';
+}
+.ant-divider-horizontal.ant-divider-with-text-left::before {
+  top: 50%;
+  width: 5%;
+}
+.ant-divider-horizontal.ant-divider-with-text-left::after {
+  top: 50%;
+  width: 95%;
+}
+.ant-divider-horizontal.ant-divider-with-text-right::before {
+  top: 50%;
+  width: 95%;
+}
+.ant-divider-horizontal.ant-divider-with-text-right::after {
+  top: 50%;
+  width: 5%;
+}
+.ant-divider-inner-text {
+  display: inline-block;
+  padding: 0 1em;
+}
+.ant-divider-dashed {
+  background: none;
+  border-color: rgba(0, 0, 0, 0.06);
+  border-style: dashed;
+  border-width: 1px 0 0;
+}
+.ant-divider-horizontal.ant-divider-with-text.ant-divider-dashed::before,
+.ant-divider-horizontal.ant-divider-with-text.ant-divider-dashed::after {
+  border-style: dashed none none;
+}
+.ant-divider-vertical.ant-divider-dashed {
+  border-width: 0 0 0 1px;
+}
+.ant-divider-plain.ant-divider-with-text {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: normal;
+  font-size: 14px;
+}
+.ant-divider-horizontal.ant-divider-with-text-left.ant-divider-no-default-orientation-margin-left::before {
+  width: 0;
+}
+.ant-divider-horizontal.ant-divider-with-text-left.ant-divider-no-default-orientation-margin-left::after {
+  width: 100%;
+}
+.ant-divider-horizontal.ant-divider-with-text-left.ant-divider-no-default-orientation-margin-left .ant-divider-inner-text {
+  padding-left: 0;
+}
+.ant-divider-horizontal.ant-divider-with-text-right.ant-divider-no-default-orientation-margin-right::before {
+  width: 100%;
+}
+.ant-divider-horizontal.ant-divider-with-text-right.ant-divider-no-default-orientation-margin-right::after {
+  width: 0;
+}
+.ant-divider-horizontal.ant-divider-with-text-right.ant-divider-no-default-orientation-margin-right .ant-divider-inner-text {
+  padding-right: 0;
+}
+.ant-divider-rtl {
+  direction: rtl;
+}
+.ant-divider-rtl.ant-divider-horizontal.ant-divider-with-text-left::before {
+  width: 95%;
+}
+.ant-divider-rtl.ant-divider-horizontal.ant-divider-with-text-left::after {
+  width: 5%;
+}
+.ant-divider-rtl.ant-divider-horizontal.ant-divider-with-text-right::before {
+  width: 5%;
+}
+.ant-divider-rtl.ant-divider-horizontal.ant-divider-with-text-right::after {
+  width: 95%;
+}
+
+.client-components-homepage-footerPage-FooterPage_container-Kuvz {
+  height: 100%;
+  width: 100%;
+  /* background-color: aqua; */
   display: flex;
   flex-direction: column;
 }
+
+.client-components-homepage-footerPage-FooterPage_imageContainer-Fe_e {
+  /* background-color: yellowgreen; */
+  height: 0;
+  flex: 4 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  .client-components-homepage-footerPage-FooterPage_imageWrapper-syHd {
+    height: 100%;
+    width: 100%;
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .client-components-homepage-footerPage-FooterPage_imageBox-fNmd {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+.client-components-homepage-footerPage-FooterPage_descriptionContainer-ZZlq {
+  background-color: rgba(235, 235, 235, 0.368);
+  flex: 6 0 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  box-shadow: 0px -5px 5px 1px rgba(194, 194, 194, 0.19);
+}
+
+  .client-components-homepage-footerPage-FooterPage_descriptionCenterBox-CGMm {
+    height: 0;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+    .client-components-homepage-footerPage-FooterPage_descriptionDetail-wrif {
+      width: 50%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+      .client-components-homepage-footerPage-FooterPage_descriptionHeader-Kgfj {
+        color: rgb(58, 58, 58);
+        font-size: large;
+        padding: 10px
+      }
+
+      .client-components-homepage-footerPage-FooterPage_descriptionItemBox-fNPx {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+        .client-components-homepage-footerPage-FooterPage_descriptionItem-PGKT {
+
+        }
+
+  .client-components-homepage-footerPage-FooterPage_footerBar-D73K {
+    height: 30px;
+    width: 100%;
+    background-color: rgb(63, 63, 63);
+    box-shadow: 0px -8px 12px 0px rgba(121, 121, 121, 0.537);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:rgb(222, 222, 222)
+  }
+
 .client-components-homepage-HomePage_test-Xv9C {
   background-color: aquamarine;
   height: 100%;

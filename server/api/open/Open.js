@@ -7,5 +7,6 @@ router.use('/articleContent', require('./ArticleContent'))
 router.use('/pageDetail', require('./PageDetail'))
 router.use('/allPages', require('./AllPage'))
 router.use('/comment', require('./Comment'))
+router.use('/hits', require('./Hits'))
 
 module.exports = router

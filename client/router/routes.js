@@ -8,7 +8,6 @@ import { setRouteInterceptor } from './interceptor'
 
 // Static Components imports:
 import App from '../components/app/App.jsx'
-import Article from '@client/components/admin/article/Article.jsx'
 import store from '@client/store'
 import { setNeedLogin } from '@client/store/adminLogin/adminLogin'
 

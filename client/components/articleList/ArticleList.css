@@ -14,12 +14,16 @@
 .main {
   width: 0;
   flex-grow: 1;
+  height: 100%;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 }
 
 .clientContainer {
-  max-height: 100%;
-  overflow: auto;
+  
+
   width: 100%;
   display: grid;
   padding: 50px;
@@ -28,8 +32,18 @@
 }
 
 .mobileContainer {
+
   width: 100%;
   display: flex;
   flex-direction: column;
+  grid-template-columns: 100% 50%;
   /* grid-template-columns: 100%; */
+}
+
+.loadingArea {
+  align-items: center;
+  min-height: 30px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
 }

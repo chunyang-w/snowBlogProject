@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding-left: 10%;
+  padding-top: 20px;
+}
+.infoFont {
+  color: gray;
+  font-size: small;
+}

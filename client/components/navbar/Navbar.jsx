@@ -41,7 +41,14 @@ export class NavBar extends React.Component {
     )
 
     const crumb = type === 'mobile' ? 
-      <Dropdown overlay={ menu } placement='bottomCenter'>
+      <Dropdown
+        overlay = { menu }
+        placement='bottomCenter'
+        onClick = {() => {
+          console.log('I\'m clicked', {menu})
+        }}
+        trigger = { ['click'] }
+        >
         <Button icon={ <UnorderedListOutlined /> }></Button>
       </Dropdown> :
       <div className={ style.itemContainer }>
@@ -59,7 +66,7 @@ export class NavBar extends React.Component {
       </div>
 
     return (
-      <div className={ style.container }>
+      <div id = 'navbar-container-2512' className={ style.container }>
         <div className={ style.title }>
           { this.props.blogName }
         </div>

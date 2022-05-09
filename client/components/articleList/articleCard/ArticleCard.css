@@ -8,6 +8,7 @@
 }
 
 .container {
+  min-height: 200px;
   border-radius: 8px;
   box-shadow: 0px 0px 8px rgba(122, 122, 122, 0.342);
   width: 90%;

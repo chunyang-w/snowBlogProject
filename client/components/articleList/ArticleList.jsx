@@ -11,6 +11,12 @@ import SideBar from './sideBar/SideBar.jsx'
 import ArticleCard from './articleCard/ArticleCard.jsx'
 import herald from '@client/herald/herald'
 import { v4 } from 'uuid'
+import { Spin, message } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
+
+const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
+
+
 
 export default function ArticleList() {
 
@@ -22,6 +28,7 @@ export default function ArticleList() {
   const [articleCollection, setArticleCollection] = useState([])
   const [minTime, setMinTime] = useState(Number.MAX_SAFE_INTEGER)
   const [scrollSignal, setScrollSignal] = useState(0)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     loadArticle(minTime, currentSearch, currentTag)
@@ -37,12 +44,18 @@ export default function ArticleList() {
       })
     function handleScroll(e) {
       const [scrollHeight, offset] = [e.target.scrollHeight, e.target.scrollTop + e.target.clientHeight]
+      console.log(scrollHeight , offset)
       if (offset >= scrollHeight) {
+        setIsLoading(true)
         setScrollSignal(v4())
         console.log('need load more')
       }
     }
+    const scrollElem = document.getElementById('scrollElem')
     scrollElem.addEventListener('scroll', handleScroll)
+    return () => {
+      scrollElem.removeEventListener('scroll', handleScroll)
+    }
   }, [currentTag])
 
   useEffect(() => {
@@ -58,6 +71,10 @@ export default function ArticleList() {
         })
         setArticleCollection(originArticleList)
         setMinTime(getMinTime(originArticleList, minTime))
+        setIsLoading(false)
+        if (res.data.length === 0) {
+          message.info('已加载全部内容')
+        }
       })
   }, [scrollSignal])
 
@@ -92,9 +109,10 @@ export default function ArticleList() {
         }
       </div>
 
-      <div className = {  style.main }>
+      <div 
+      id = 'scrollElem' className = {  style.main }>
         <div
-          id = 'scrollElem'
+          
           className = { clientType === 'client' ? style.clientContainer : style.mobileContainer }
           >
           {
@@ -110,6 +128,11 @@ export default function ArticleList() {
                 }
               />
             ))
+          }
+        </div>
+        <div className = { style.loadingArea }>
+          {
+              isLoading ? <Spin indicator = { antIcon } /> : <></>
           }
         </div>
       </div>

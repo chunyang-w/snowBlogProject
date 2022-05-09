@@ -1,12 +1,14 @@
 import React from 'react'
 import { Suspense, lazy } from "react"
 import Guard from './Guard.jsx'
+import Loading from '@client/components/Loading/Loading.jsx'
 
 export function loadAsync (fn, meta) {
   const Element = lazy(fn)
   const ElementAsync = (
     <Suspense fallback={
-      <div>loading...</div>
+      // <div>loading</div>
+      <Loading/>
     }>
       <Element _meta = { meta }/>
     </Suspense>

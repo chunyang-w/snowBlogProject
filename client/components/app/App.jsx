@@ -9,7 +9,7 @@ export class App extends React.Component {
   render () {
     return (
       <div className = { style.container }>
-        <NavBar className={ style.navBar } blogName={blog.blogName}/>
+        <NavBar className={ style.navBar } blogName={ blog.blogName }/>
  
         <div className = { style.main }>
           <div className = { style.spacer }></div>

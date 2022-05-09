@@ -43,6 +43,7 @@ export default function CommentList(props) {
   return (
     <div className = { clientType === 'client' ? style.container : style.containerMobile }>
       <Comment
+        id = { style.commentContainer }
         avatar = {
           <Avatar
             size = { 50 }
