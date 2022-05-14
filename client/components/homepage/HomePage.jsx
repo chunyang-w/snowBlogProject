@@ -6,7 +6,7 @@ import ReactFullpage from '@fullpage/react-fullpage'
 import herald from '@client/herald/herald'
 import IndexPage from './indexPage/IndexPage.jsx'
 import ContentPage from './contentPage/ContentPage.jsx'
-import FooterPage from './footerPage/footerPage.jsx'
+import FooterPage from './footerPage/FooterPage.jsx'
 import style from './HomePage.css'
 import Loading from '@client/components/Loading/Loading.jsx'
 
