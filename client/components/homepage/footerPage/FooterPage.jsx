@@ -30,7 +30,7 @@ export default function IndexPage(props) {
     })
     .then(res => {
       console.log('in footer, response from article.get:', res)
-      setArticles(res.data.length >= 5 ? res.data.slice(0,5) : res.data.length)
+      setArticles(res.data.length >= 5 ? res.data.slice(0,5) : res.data)
     })
   }, [])
 
