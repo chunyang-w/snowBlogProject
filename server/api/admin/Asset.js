@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
     if (err) {
       res.send(new Response({
         code: 4,
-        data: null,
+        data: err,
         message: 'data failed to save'
       }))
     } else {
