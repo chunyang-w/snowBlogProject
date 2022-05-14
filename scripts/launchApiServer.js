@@ -13,7 +13,9 @@ mongodConnection.addListener('spawn', async () => {
   console.log('MongoDB service started')
   console.log('Initiating MongoDB connection...')
   await mongo
+  console.log('mongo done')
   await mongoSetUp()
+  console.log('mongoSetUp done')
   console.log('Mongo connected')
   apiServer.listen(config.server.apiPort,
     (err) => {
