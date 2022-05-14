@@ -12,7 +12,6 @@ const { mongoSetUp } = require('./dbSetup')
 mongodConnection.addListener('spawn', async () => {
   console.log('MongoDB service started')
   console.log('Initiating MongoDB connection...')
-
   await mongo
   await mongoSetUp()
   console.log('Mongo connected')
