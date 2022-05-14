@@ -7,7 +7,6 @@ export function loadAsync (fn, meta) {
   const Element = lazy(fn)
   const ElementAsync = (
     <Suspense fallback={
-      // <div>loading</div>
       <Loading/>
     }>
       <Element _meta = { meta }/>

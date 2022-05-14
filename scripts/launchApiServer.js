@@ -12,16 +12,17 @@ const { mongoSetUp } = require('./dbSetup')
 mongodConnection.addListener('spawn', async () => {
   console.log('MongoDB service started')
   console.log('Initiating MongoDB connection...')
-  // console.log(await mongo)
+
   await mongo
   await mongoSetUp()
   console.log('Mongo connected')
-  apiServer.listen(config.server.apiPort, (err) => {
-    if (err) {
-      console.error(err)
-    } else {
-      console.log('api server started')
-    }
+  apiServer.listen(config.server.apiPort,
+    (err) => {
+      if (err) {
+        console.error(err)
+      } else {
+        console.log('api server started')
+      }
   })
 })
 

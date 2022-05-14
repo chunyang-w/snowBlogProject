@@ -12,7 +12,7 @@ async function mongoSetUp() {
       passwd: config.admin.login.passwd
     }).save()
   } else {
-    console.log('Admin exist:', admin)
+    // console.log('Admin exist:', admin)
   }
 
   // find and init IndexPage
@@ -26,7 +26,7 @@ async function mongoSetUp() {
       sort: -Number.MAX_SAFE_INTEGER
     }).save()
   } else {
-    console.log('Index Page already exist: ', indexPage)
+    // console.log('Index Page already exist: ', indexPage)
   }
 
   // find and init IndexPage
@@ -40,7 +40,7 @@ async function mongoSetUp() {
       sort: Number.MAX_SAFE_INTEGER
     }).save()
   } else {
-    console.log('footerPage already exist: ', footerPage)
+    // console.log('footerPage already exist: ', footerPage)
   }
 }
 

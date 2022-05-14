@@ -3,6 +3,8 @@
 /database/data/*
 /database/log/*
 /server/public/articleImage/*
-/dist/*
+/server/public/homePage/*
+/dist
 /graph
 /docs
+/.VSCodeCounter

@@ -112,7 +112,6 @@ export default function ArticleList() {
       <div 
       id = 'scrollElem' className = {  style.main }>
         <div
-          
           className = { clientType === 'client' ? style.clientContainer : style.mobileContainer }
           >
           {
