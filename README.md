@@ -1,5 +1,7 @@
 # SnowBlogProject
 
+![demo_img](https://github.com/chunyang-w/snowBlogProject/blob/master/demo/demo.png)
+
 📒 A user-friendly and simple-to-install blog app based on JavaScript
 一个基于`JS`用户友好、易于安装的博客系统
 
